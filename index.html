@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LAIARC - 文明溯源 · AI 智構 · 生態共生</title>
+  <title>LAIARC 建築與生態 | 文明溯源 · AI 智構 · 生態共生</title>
   <style>
     :root {
       --bg-dark: #0f1115;
@@ -58,7 +58,7 @@
       color: #fff;
     }
 
-    /* 主橫幅 (Banner) */
+    /* 主橫幅 (Banner) - 採用中文核心標題 */
     .hero-banner {
       position: relative;
       width: 100%;
@@ -66,17 +66,24 @@
       background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
                   url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 20px;
     }
     .hero-title {
-      font-size: clamp(20px, 3.2vw, 36px);
+      font-size: clamp(22px, 3.2vw, 36px);
       font-weight: 700;
       color: #ffffff;
       text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-      max-width: 900px;
+      margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      font-size: clamp(14px, 1.8vw, 18px);
+      color: #e2e8f0;
+      font-weight: 300;
+      letter-spacing: 1px;
     }
 
     /* 主體容器 */
@@ -103,7 +110,7 @@
       border-radius: 2px;
     }
 
-    /* 方式二：B站內嵌播放器區塊 */
+    /* B站播放器區塊 */
     .video-section {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -176,7 +183,7 @@
       text-decoration: underline;
     }
 
-    /* 四大分類商品 / 資源網格 (復刻主站版面) */
+    /* 四大分類商品 / 資源網格 */
     .grid-four {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -259,22 +266,23 @@
     <a href="#" class="logo">LAIARC</a>
     <nav>
       <a href="https://cn.laiarc.com">首頁</a>
-      <a href="https://space.bilibili.com/3707054751484295" target="_blank">B站專區</a>
-      <a href="mailto:contact@laiarc.com">商務洽談</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
     </nav>
   </header>
 
-  <!-- 橫幅 Banner -->
+  <!-- 橫幅 Banner：中文主題 -->
   <section class="hero-banner">
-    <h1 class="hero-title">Intelligent Green Habitats: AI, Passive Design & Off-Grid Living</h1>
+    <h1 class="hero-title">智慧綠色人居</h1>
+    <p class="hero-subtitle">人工智慧 · 被動式節能設計 · 離網生態生活</p>
   </section>
 
   <main class="container">
     
-    <!-- 方式二：B站播放器嵌入區 -->
+    <!-- B站官方播放器嵌入區 -->
     <div class="video-section">
       <div class="section-title">
-        <span>精選探索 · 凝固的文明</span>
+        <span>精選紀錄 · 凝固的文明</span>
       </div>
 
       <!-- 嵌入 iframe -->
@@ -289,126 +297,125 @@
 
       <div class="video-selector-label">點擊切換播放影片：</div>
       <div class="playlist-tabs">
-        <!-- 點擊切換不同的影片 BV 號 -->
-        <button class="tab-btn active" onclick="switchVideo('BV1eham6uENK', this)">泰姬瑪哈陵 (TAJ MAHAL)</button>
-        <button class="tab-btn" onclick="switchVideo('BV16jam6UE4F', this)">婆羅浮屠 (Borobudur)</button>
-        <button class="tab-btn" onclick="switchVideo('BV1AGam6pEV9', this)">天空之城：馬丘比丘</button>
-        <button class="tab-btn" onclick="switchVideo('BV1BHam6LEf5', this)">比金字塔早7500年的哥貝克力石陣</button>
-        <button class="tab-btn" onclick="switchVideo('BV16Eam67Euy', this)">德林庫尤地下城</button>
+        <button class="tab-btn active" onclick="switchVideo('BV1xxxxxxxxx', this)">泰姬瑪哈陵</button>
+        <button class="tab-btn" onclick="switchVideo('BV1xxxxxxxxx', this)">婆羅浮屠：實化迷宮的高維密碼</button>
+        <button class="tab-btn" onclick="switchVideo('BV1xxxxxxxxx', this)">天空之城：馬丘比丘</button>
+        <button class="tab-btn" onclick="switchVideo('BV1xxxxxxxxx', this)">哥貝克力石陣（比金字塔早7500年）</button>
+        <button class="tab-btn" onclick="switchVideo('BV1xxxxxxxxx', this)">德林庫尤地下城：地下18層末日蜂巢</button>
       </div>
 
       <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer" class="bili-space-link">
-        前往 Bilibili 個人主頁【凝固的文明】觀看更多內容 →
+        前往 Bilibili 個人主頁【凝固的文明】觀看更多完整解密 →
       </a>
     </div>
 
-    <!-- 主站四欄卡片佈局 -->
+    <!-- 四大中文板塊佈局 -->
     <div class="section-title">
-      <span>精選工具與資源</span>
+      <span>精選工具與好物推薦</span>
     </div>
 
     <div class="grid-four">
       <!-- 欄目 1 -->
       <div class="category-card">
-        <div class="category-title">Software & Tools</div>
+        <div class="category-title">AI 智構與數位工具</div>
         <div class="card-grid-inner">
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="Tool 1">
-            <span class="inner-label">AI Financial Toolkit</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="AI 金融工具">
+            <span class="inner-label">AI 數據與分析工具</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=300" alt="Tool 2">
-            <span class="inner-label">AI Freedom Pad</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=300" alt="創作平板">
+            <span class="inner-label">數位創作工作板</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="Tool 3">
-            <span class="inner-label">eBook Creation</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="電子書創作">
+            <span class="inner-label">電子書與知識創作</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300" alt="Tool 4">
-            <span class="inner-label">Digital Wealth Pad</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300" alt="資產管理">
+            <span class="inner-label">個人數位資產工具</span>
           </div>
         </div>
-        <a href="#" class="card-footer-link">Explore all tools</a>
+        <a href="#" class="card-footer-link">探索所有數位工具 →</a>
       </div>
 
       <!-- 欄目 2 -->
       <div class="category-card">
-        <div class="category-title">Hardware & PC</div>
+        <div class="category-title">硬體裝備與工作站</div>
         <div class="card-grid-inner">
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300" alt="Laptops">
-            <span class="inner-label">Laptops</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300" alt="高性能筆記型電腦">
+            <span class="inner-label">高性能筆記型電腦</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300" alt="PC">
-            <span class="inner-label">PC Workstations</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300" alt="桌上型工作站">
+            <span class="inner-label">桌上型工作站</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300" alt="Hard Drives">
-            <span class="inner-label">Hard Drives</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300" alt="固態硬碟與儲存">
+            <span class="inner-label">高容量高速硬碟</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300" alt="Monitors">
-            <span class="inner-label">Monitors</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300" alt="專業顯示器">
+            <span class="inner-label">專業設計顯示器</span>
           </div>
         </div>
-        <a href="#" class="card-footer-link">Discover more</a>
+        <a href="#" class="card-footer-link">查看硬體裝備詳情 →</a>
       </div>
 
       <!-- 欄目 3 -->
       <div class="category-card">
-        <div class="category-title">Finds for Home</div>
+        <div class="category-title">生態人居與居家好物</div>
         <div class="card-grid-inner">
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=300" alt="Kitchen">
-            <span class="inner-label">Kitchen</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=300" alt="廚房用品">
+            <span class="inner-label">廚房與烹飪好物</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=300" alt="Home Decor">
-            <span class="inner-label">Home Decor</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=300" alt="家居軟裝">
+            <span class="inner-label">極簡家居裝飾</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=300" alt="Dining">
-            <span class="inner-label">Dining</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=300" alt="餐飲器具">
+            <span class="inner-label">美學餐飲用具</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1543512214-318c7553f230?w=300" alt="Smart Home">
-            <span class="inner-label">Smart Home</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1543512214-318c7553f230?w=300" alt="智慧家居">
+            <span class="inner-label">智慧生態家居設備</span>
           </div>
         </div>
-        <a href="#" class="card-footer-link">See more for home</a>
+        <a href="#" class="card-footer-link">瀏覽更多人居好物 →</a>
       </div>
 
       <!-- 欄目 4 -->
       <div class="category-card">
-        <div class="category-title">Deals on Top Categories</div>
+        <div class="category-title">熱門品類精選推薦</div>
         <div class="card-grid-inner">
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="Books">
-            <span class="inner-label">Books</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="建築人文書籍">
+            <span class="inner-label">建築與歷史圖書</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=300" alt="Fashion">
-            <span class="inner-label">Fashion</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=300" alt="服飾穿搭">
+            <span class="inner-label">質感戶外與服飾</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300" alt="Electronics">
-            <span class="inner-label">Electronics</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300" alt="數位配件">
+            <span class="inner-label">高階數位配件</span>
           </div>
           <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=300" alt="Cleaning Tools">
-            <span class="inner-label">Cleaning Tools</span>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=300" alt="日常清潔工具">
+            <span class="inner-label">高效清潔護理</span>
           </div>
         </div>
-        <a href="#" class="card-footer-link">Discover deals</a>
+        <a href="#" class="card-footer-link">探索特惠推薦 →</a>
       </div>
     </div>
 
   </main>
 
   <footer>
-    <p>© 2026 LAIARC. All rights reserved. | 聯絡諮詢：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
   </footer>
 
   <script>
