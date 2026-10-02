@@ -6,12 +6,13 @@
   <title>LAIARC 建築與生態 | 文明溯源 · AI 智構 · 生態共生</title>
   <style>
     :root {
-      --bg-dark: #0f1115;
-      --card-bg: #181b22;
-      --card-border: #262a36;
-      --accent-green: #34d399;
+      --bg-dark: #0a0b0e;
+      --card-bg: #14171f;
+      --card-border: #222634;
+      --accent-gold: #eab308;
+      --accent-green: #10b981;
       --accent-blue: #00aeec;
-      --text-main: #f1f5f9;
+      --text-main: #f8fafc;
       --text-sub: #94a3b8;
     }
 
@@ -25,23 +26,23 @@
       background-color: var(--bg-dark);
       color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* 頂部導航欄 */
     header {
       background: #000000;
-      padding: 16px 32px;
+      padding: 18px 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #222;
+      border-bottom: 1px solid #1f2430;
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .logo {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: 2px;
       color: #fff;
@@ -58,12 +59,12 @@
       color: #fff;
     }
 
-    /* 主橫幅 (Banner) - 採用中文核心標題 */
+    /* 主橫幅 (Banner) */
     .hero-banner {
       position: relative;
       width: 100%;
       height: 240px;
-      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
                   url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -90,9 +91,89 @@
     .container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 40px 20px 70px;
     }
 
+    /* === BLOG 專欄區塊樣式 === */
+    .blog-section {
+      margin-bottom: 50px;
+    }
+    .blog-header {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .blog-badge {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+    }
+    .blog-desc {
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b4256;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    .blog-img-box {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #111;
+    }
+    .blog-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover .blog-img-box img {
+      transform: scale(1.04);
+    }
+    .blog-content {
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #101217;
+      border-top: 1px solid var(--card-border);
+    }
+    .blog-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .blog-arrow {
+      color: var(--accent-gold);
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+    .blog-card:hover .blog-arrow {
+      transform: translateX(4px);
+    }
+
+    /* === B站播放器區塊 === */
     .section-title {
       font-size: 20px;
       font-weight: 600;
@@ -110,7 +191,6 @@
       border-radius: 2px;
     }
 
-    /* B站播放器區塊 */
     .video-section {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -121,7 +201,7 @@
     .player-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 高寬比 */
+      padding-bottom: 56.25%;
       height: 0;
       border-radius: 10px;
       overflow: hidden;
@@ -136,7 +216,6 @@
       border: none;
     }
 
-    /* 影片清單切換按鈕 */
     .video-selector-label {
       font-size: 14px;
       color: var(--text-sub);
@@ -169,7 +248,6 @@
       color: #fff;
       font-weight: 600;
     }
-
     .bili-space-link {
       display: inline-flex;
       align-items: center;
@@ -177,77 +255,14 @@
       color: var(--accent-blue);
       text-decoration: none;
       font-size: 13px;
-      margin-top: 4px;
     }
     .bili-space-link:hover {
       text-decoration: underline;
     }
 
-    /* 四大分類商品 / 資源網格 */
-    .grid-four {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .category-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-    .category-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 14px;
-      color: #fff;
-    }
-    .card-grid-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      flex-grow: 1;
-    }
-    .inner-item {
-      background: #111317;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      transition: transform 0.15s;
-    }
-    .inner-item:hover {
-      transform: translateY(-2px);
-    }
-    .inner-img {
-      width: 100%;
-      height: 90px;
-      object-fit: cover;
-      background: #222;
-    }
-    .inner-label {
-      padding: 8px;
-      font-size: 12px;
-      color: var(--text-sub);
-      text-align: center;
-    }
-    .card-footer-link {
-      margin-top: 14px;
-      font-size: 13px;
-      color: #38bdf8;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .card-footer-link:hover {
-      text-decoration: underline;
-    }
-
     /* 頁腳 */
     footer {
-      border-top: 1px solid #222;
+      border-top: 1px solid #1c202a;
       padding: 30px 20px;
       text-align: center;
       color: #64748b;
@@ -266,30 +281,74 @@
     <a href="#" class="logo">LAIARC</a>
     <nav>
       <a href="https://cn.laiarc.com">首頁</a>
+      <a href="#blog">專欄文章</a>
       <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
       <a href="mailto:contact@laiarc.com">聯絡合作</a>
     </nav>
   </header>
 
-  <!-- 橫幅 Banner：中文主題 -->
+  <!-- 橫幅 Banner -->
   <section class="hero-banner">
     <h1 class="hero-title">智慧綠色人居</h1>
     <p class="hero-subtitle">人工智慧 · 被動式節能設計 · 離網生態生活</p>
   </section>
 
   <main class="container">
-    
+
+    <!-- BLOG 專欄區塊 -->
+    <section class="blog-section" id="blog">
+      <div class="blog-header">
+        <span class="blog-badge">專欄 BLOG</span>
+        <span class="blog-desc">融合生成式 AI、微氣候模擬運算與高效能生態建築解決方案，賦能建築師與空間創作者。</span>
+      </div>
+
+      <div class="blog-grid">
+        <!-- 卡片 1 -->
+        <a href="javascript:void(0);" class="blog-card">
+          <div class="blog-img-box">
+            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=700&q=80" alt="綠色建築與硬體裝備">
+          </div>
+          <div class="blog-content">
+            <span class="blog-card-title">綠色建築與硬體裝備</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- 卡片 2 -->
+        <a href="javascript:void(0);" class="blog-card">
+          <div class="blog-img-box">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" alt="設計與效能 SaaS 雲平台">
+          </div>
+          <div class="blog-content">
+            <span class="blog-card-title">設計與效能 SaaS 雲平台</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- 卡片 3 -->
+        <a href="javascript:void(0);" class="blog-card">
+          <div class="blog-img-box">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" alt="生態材料與循環供應鏈">
+          </div>
+          <div class="blog-content">
+            <span class="blog-card-title">生態材料與綠色供應鏈</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- B站官方播放器嵌入區 -->
-    <div class="video-section">
+    <section class="video-section">
       <div class="section-title">
         <span>精選紀錄 · 凝固的文明</span>
       </div>
 
-      <!-- 嵌入 iframe -->
+      <!-- 嵌入 iframe：預設加載泰姬瑪哈陵 -->
       <div class="player-wrapper">
         <iframe 
           id="biliPlayer"
-          src="//player.bilibili.com/player.html?bvid=BV1xxxxxxxxx&page=1&high_quality=1&danmaku=0" 
+          src="//player.bilibili.com/player.html?bvid=BV1eham6uENK&page=1&high_quality=1&danmaku=0" 
           scrolling="no" 
           allowfullscreen="true">
         </iframe>
@@ -301,130 +360,22 @@
         <button class="tab-btn" onclick="switchVideo('BV16jam6UE4F', this)">婆羅浮屠：實化迷宮的高維密碼</button>
         <button class="tab-btn" onclick="switchVideo('BV1AGam6pEV9', this)">天空之城：馬丘比丘</button>
         <button class="tab-btn" onclick="switchVideo('BV1BHam6LEf5', this)">哥貝克力石陣（比金字塔早7500年）</button>
-        <button class="tab-btn" onBV16Eam67Euyclick="switchVideo('BV16Eam67Euy', this)">德林庫尤地下城：地下18層末日蜂巢</button>
+        <button class="tab-btn" onclick="switchVideo('BV16Eam67Euy', this)">德林庫尤地下城：地下18層末日蜂巢</button>
       </div>
 
       <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer" class="bili-space-link">
         前往 Bilibili 個人主頁【凝固的文明】觀看更多完整解密 →
       </a>
-    </div>
-
-    <!-- 四大中文板塊佈局 -->
-    <div class="section-title">
-      <span>精選工具與好物推薦</span>
-    </div>
-
-    <div class="grid-four">
-      <!-- 欄目 1 -->
-      <div class="category-card">
-        <div class="category-title">AI 智構與數位工具</div>
-        <div class="card-grid-inner">
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" alt="AI 金融工具">
-            <span class="inner-label">AI 數據與分析工具</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=300" alt="創作平板">
-            <span class="inner-label">數位創作工作板</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="電子書創作">
-            <span class="inner-label">電子書與知識創作</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300" alt="資產管理">
-            <span class="inner-label">個人數位資產工具</span>
-          </div>
-        </div>
-        <a href="#" class="card-footer-link">探索所有數位工具 →</a>
-      </div>
-
-      <!-- 欄目 2 -->
-      <div class="category-card">
-        <div class="category-title">硬體裝備與工作站</div>
-        <div class="card-grid-inner">
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300" alt="高性能筆記型電腦">
-            <span class="inner-label">高性能筆記型電腦</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300" alt="桌上型工作站">
-            <span class="inner-label">桌上型工作站</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300" alt="固態硬碟與儲存">
-            <span class="inner-label">高容量高速硬碟</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300" alt="專業顯示器">
-            <span class="inner-label">專業設計顯示器</span>
-          </div>
-        </div>
-        <a href="#" class="card-footer-link">查看硬體裝備詳情 →</a>
-      </div>
-
-      <!-- 欄目 3 -->
-      <div class="category-card">
-        <div class="category-title">生態人居與居家好物</div>
-        <div class="card-grid-inner">
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=300" alt="廚房用品">
-            <span class="inner-label">廚房與烹飪好物</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=300" alt="家居軟裝">
-            <span class="inner-label">極簡家居裝飾</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=300" alt="餐飲器具">
-            <span class="inner-label">美學餐飲用具</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1543512214-318c7553f230?w=300" alt="智慧家居">
-            <span class="inner-label">智慧生態家居設備</span>
-          </div>
-        </div>
-        <a href="#" class="card-footer-link">瀏覽更多人居好物 →</a>
-      </div>
-
-      <!-- 欄目 4 -->
-      <div class="category-card">
-        <div class="category-title">熱門品類精選推薦</div>
-        <div class="card-grid-inner">
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="建築人文書籍">
-            <span class="inner-label">建築與歷史圖書</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=300" alt="服飾穿搭">
-            <span class="inner-label">質感戶外與服飾</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300" alt="數位配件">
-            <span class="inner-label">高階數位配件</span>
-          </div>
-          <div class="inner-item">
-            <img class="inner-img" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=300" alt="日常清潔工具">
-            <span class="inner-label">高效清潔護理</span>
-          </div>
-        </div>
-        <a href="#" class="card-footer-link">探索特惠推薦 →</a>
-      </div>
-    </div>
+    </section>
 
   </main>
 
   <footer>
-    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與合作：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
   </footer>
 
   <script>
-    // 切換 B站播放器影片
     function switchVideo(bvid, btn) {
-      if (bvid.includes('xxxx')) {
-        alert('請將代碼中的 BV 號替換為你 B站影片的真實 BV 號！');
-        return;
-      }
       var iframe = document.getElementById('biliPlayer');
       iframe.src = "//player.bilibili.com/player.html?bvid=" + bvid + "&page=1&high_quality=1&danmaku=0";
       
