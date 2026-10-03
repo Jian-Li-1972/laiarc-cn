@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>覆土與地下微型建築：地下熱物理學、防水構造與採購指南 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          覆土與地下微型建築：地下熱物理學、防水構造與採購指南
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          土壤熱慣性、地熱相位延遲、流體靜壓排水外護層、膨潤土自癒防水與地下導光採光選型
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 熱飛輪效應：土壤熱容與年度溫度衰減延遲
+        </h2>
+        <p>
+          覆土式與地下人居建築是被動式氣候適應性設計最極致的表現形式。當室外地表空氣溫度在盛夏酷暑與嚴冬霜凍之間產生高達 30°C 至 40°C 的極端波動時，地下 <strong>2.0 至 3.5 米</strong>深處的土壤溫度卻能全年恆定在 10°C 至 15°C 的極窄舒適區間內。
+        </p>
+        <p>
+          這一現象源於<strong>調和熱阻尼（Harmonic Thermal Damping）與極致的相位延遲（Phase Lag）</strong>。泥土龐大的容重和熱容體量，將夏季地表峰值熱量的下滲傳遞延緩了約 <strong>90 至 120 天</strong>。盛夏被大地吸收儲存的太陽輻射熱，直到深秋與初冬時分才逐漸抵達地下居住牆體，在無需任何主動機械採暖的情況下天然抵消了冬季採暖負荷。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">土壤熱傳導數學模型（Kusuda & Achenbach 公式）：</strong><br>
+          • <strong>深層土壤即時溫度（<em>T(z,t)</em>）：</strong> <em>T<sub>mean</sub></em> − <em>A<sub>s</sub></em> · exp(−<em>z</em> · √(<em>π</em> / (<em>α</em> · 365))) · cos((2<em>π</em>/365) · (<em>t</em> − <em>t</em><sub>0</sub> − <em>z</em>/2 · √(365 / (<em>π</em> · <em>α</em>)))<br>
+          • <strong>有效深度阻尼（<em>z</em>）：</strong> 當深度 <em>z</em> ≥ 3.0 m 時，年度溫度振幅（<em>A<sub>s</sub></em>）衰減幅度超過 <strong>75%</strong>，徹底將建築空間與地表極端大氣環境解耦。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 外護層防護工程：流體靜壓阻隔與膨潤土防水屏障
+        </h2>
+        <p>
+          地下建築長期經受著持續的地下水流體靜壓力、植物根系穿刺以及巨大的側向土壓力（45–60 kN/m²）。傳統的瀝青塗料和刷塗型防水膜在長期水浸飽和環境下極易老化失效。現代覆土建築外護層採用<strong>自癒型土工複合防水卷材與連續凸起排水板矩陣</strong>：
+        </p>
+
+        <!-- 技術規格表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">構造層次</th>
+              <th style="padding: 10px 14px; text-align: left;">材料規格標準</th>
+              <th style="padding: 10px 14px; text-align: left;">核心工程功能</th>
+              <th style="padding: 10px 14px; text-align: left;">使用壽命 / 性能等級</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">1. 主防水屏障層</td>
+              <td style="padding: 10px 14px; color: #4caf50;">鈉基膨潤土防水毯（Geotextile Sheet）</td>
+              <td style="padding: 10px 14px;">遇水膨脹高達 15 倍，自動封堵微裂縫與微小穿刺孔洞</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">永久性（天然無機礦物壽命）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">2. 地下保溫核心層</td>
+              <td style="padding: 10px 14px; color: #4caf50;">擠塑聚苯板（XPS Type VII / 抗壓 100 psi）</td>
+              <td style="padding: 10px 14px;">抵抗極端地下土壓力與長期浸水環境，熱阻無衰減</td>
+              <td style="padding: 10px 14px; color: #4caf50;">50 年以上（疏水閉孔結構）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">3. 靜水壓導流疏水層</td>
+              <td style="padding: 10px 14px; color: #4caf50;">高密度聚乙烯（HDPE）凸起盲溝排水板</td>
+              <td style="padding: 10px 14px;">釋放流體靜水壓力水頭，將地下滲水引流至基坑周邊盲溝管網</td>
+              <td style="padding: 10px 14px;">排水通量 > 2.5 L/(s·m)</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">4. 防根刺與反濾層</td>
+              <td style="padding: 10px 14px; color: #4caf50;">非織造聚丙烯土工布濾層</td>
+              <td style="padding: 10px 14px;">防止細泥沙淤塞排水空氣通道，確保長期通暢</td>
+              <td style="padding: 10px 14px;">防腐耐腐蝕、生物惰性</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 自然採光導入與被動式防氡 / 除濕通風構造
+        </h2>
+        <p>
+          地下人居空間必須配套嚴密的導光採光策略與土壤氣體（氡氣）及潮氣管控機制，以營造健康舒適的室內微環境：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">1. 高流明導光管採光與高側採光天窗</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              整合高反射光學導光管系統（內壁具備 99.7% 鏡面光學反射率銀薄膜塗層），在零熱量損失的前提下，將自然日光下引 3 米照射進地下臥室與工作區域。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">採光係數：無額外能耗提供 > 300 Lux 自然照度</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">2. 底板下主動負壓防氡排氣系統</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              覆土接觸牆面可能面臨土壤氡氣滲透風險。在底板基礎下方鋪設 100 mm 透氣級配碎石層與穿孔收集管道迴路，搭配低功耗持續運轉排風扇將氣體主動導排至室外。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">安全標準：確保室內氡氣濃度長期 < 2.0 pCi/L</span>
+          </div>
+        </div>
+
+        <div style="background: #181818; border-left: 3px solid #d4af37; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px;">
+          <strong style="color: #d4af37;">夏季除濕準則：</strong> 由於地下牆體表面在盛夏保持低溫，室外湧入的濕熱空氣極易在牆面達到露點析出凝結水。全熱交換新風機（ERV）必須串聯專用低溫冷凝除濕模組（嚴格將室內相對濕度 RH 控制在 50% 以下），杜絕夾層結露與霉菌滋生。
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 地下防水材料與導光採光設備採購目錄
+        </h2>
+
+        <!-- 供應商 1 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>1. 自癒型膨潤土防水卷材與凸起盲溝排水板</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">CETCO / 德諾肯 Dörken DELTA / 格雷斯 Grace Preprufe</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>膨潤土土工合成防水毯：</strong> CETCO Volclay VOLTEX 活性土工布複合防水毯。</li>
+            <li><strong>高載荷凸起排水板：</strong> 德國 Dörken DELTA-MS / DELTA-TERRAXX 地下高通量複合排水卷材。</li>
+            <li><strong>預鋪反粘防水膜：</strong> 基仕伯（GCP Applied Technologies）Preprufe 300R 與後澆混凝土無間隙化學粘結膜。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>工程採購通道：</strong> 透過地下岩土工程材料供應網絡獲取官方技術提審文件、卷材規格參數表及批發承包商整托盤採購優惠。
+          </div>
+        </div>
+
+        <!-- 供應商 2 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>2. 光學導光管系統與地源熱交換新風設備</span>
+            <span style="font-size: 13px; color: #4caf50; background: #1b261b; padding: 3px 8px; border-radius: 4px;">索樂圖 Solatube / 法克羅 FAKRO / 森德 Zehnder</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>管狀日光採集導入系統：</strong> Solatube Brighten Up 160 DS / 290 DS 高光譜傳輸導光管。</li>
+            <li><strong>地下預埋地源地氣熱交換器：</strong> 德國瑞好 REHAU AWADUKT Thermo 抗菌地埋式新風預冷預熱管。</li>
+            <li><strong>被動房認證 ERV 新風系統：</strong> 森德 Zehnder ComfoAir Q350 平衡式全熱交換新風機，整合顯熱與潛熱高效率回收。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>專業供貨通道：</strong> 經由暖通節能經銷渠道獲取地下專用採光罩、可踩踏採光天窗及地坪防氡排氣引風機。
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 覆土微型建築將地質工程的熱緩衝效應與現代結構技術完美結合。藉由深層土壤的調和熱阻尼、鈉基膨潤土自癒防水屏障以及先進的光學導光採光技術，地下居所兼得近零能耗的極致熱穩定性與親近大地的生物友善居住體驗。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
