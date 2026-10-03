@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重型木構供應鏈整合：結構工程與一級廠商採購指南 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    /* 原始樣式封裝 */
+    .laiarc-article-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 4px 6px 30px;
+    }
+    .article-header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid #222222;
+      padding-bottom: 18px;
+    }
+    .article-title {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0 0 10px 0;
+    }
+    .article-subtitle {
+      color: #d4af37;
+      font-size: 14.5px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .article-meta {
+      color: #71717a;
+      font-size: 13px;
+    }
+    .content-section {
+      margin-bottom: 28px;
+    }
+    .section-title {
+      color: #eab308;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 14px 0;
+      border-bottom: 1px solid #282828;
+      padding-bottom: 6px;
+    }
+    p {
+      margin: 0 0 12px 0;
+      font-size: 14.5px;
+      color: #9ca3af;
+    }
+    strong {
+      color: #f3f4f6;
+    }
+    .callout-box {
+      background: #0d1a13;
+      border: 1px solid #059669;
+      border-left: 3px solid #10b981;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 13.5px;
+    }
+    .callout-title {
+      color: #34d399;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .table-container {
+      overflow-x: auto;
+      background: #141414;
+      border: 1px solid #242424;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+      min-width: 600px;
+    }
+    .data-table th {
+      background: #181818;
+      color: #eab308;
+      font-weight: 600;
+      padding: 12px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .data-table td {
+      padding: 12px;
+      border-bottom: 1px solid #1f1f1f;
+      color: #9ca3af;
+    }
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .col-highlight {
+      color: #f3f4f6;
+      font-weight: 600;
+    }
+    .span-col {
+      color: #10b981;
+    }
+    .span-sub {
+      color: #059669;
+      font-size: 12px;
+    }
+    .dir-block {
+      background: #141414;
+      border: 1px solid #242424;
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .dir-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .dir-num {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .dir-badge {
+      color: #eab308;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+    .dir-text {
+      margin: 0 0 10px 0;
+      font-size: 13.5px;
+    }
+    .procurement-note {
+      background: #1a1a1a;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: #d1d5db;
+    }
+    .summary-quote {
+      margin: 20px 0 0 0;
+      padding: 12px 16px;
+      border-left: 3px solid #4b5563;
+      background: #141414;
+      color: #e5e7eb;
+      font-style: italic;
+      font-size: 14px;
+    }
+    .article-footer {
+      border-top: 1px solid #222222;
+      padding-top: 16px;
+      margin-top: 32px;
+      font-size: 12px;
+      color: #52525b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div class="laiarc-article-wrapper">
+
+      <!-- 文章標題與發布資訊 -->
+      <header class="article-header">
+        <h1 class="article-title">重型木構供應鏈整合：結構工程與一級廠商採購指南</h1>
+        <div class="article-subtitle">正交膠合木（CLT）、膠合木梁（Glulam）、生物質固碳、炭化率物理機制與一級廠商採購指南</div>
+        <div class="article-meta">發布機構：LAIARC 綠色人居與運算性設計實驗室</div>
+      </header>
+
+      <!-- 第 1 節 -->
+      <section class="content-section">
+        <h2 class="section-title">1. 工程級重型木構的工業化演進</h2>
+        <p>現代重型木構體系——主要包括<strong>正交膠合木（CLT）</strong>、<strong>膠合木（Glulam）</strong>以及<strong>單板層積材（LVL）</strong>——已經從少數先鋒性的永續探索，演進為完全符合現代建築法規的工業化結構框架，廣泛應用於中高層商業建築與公用工程。</p>
+        
+        <p>藉由替代高碳排的傳統混凝土與鋼結構框架，重型木構在作為實體固碳庫的同時，透過數控精密 CNC 預製加工，賦予了結構極致的尺寸穩定性與現場高塔吊吊裝裝配效率。</p>
+
+        <!-- 綠色物理公式卡片 -->
+        <div class="callout-box">
+          <div class="callout-title">生物質固碳與防火炭化物理機制：</div>
+          <p style="margin: 0 0 6px 0;">• <strong>生物質碳封存潛力：</strong> 每 1 m³ 結構級針葉木 CLT 板材可封存約 <strong>700–900 kg CO₂e</strong>，將大氣碳分子永久鎖定在建築圍護體系內長達數百年。</p>
+          <p style="margin: 0;">• <strong>可預測的炭化速率（β₀）：</strong> 針葉木在遭遇火災時以極其穩定的線性速率炭化（<strong>β₀ ≈ 0.65 mm/min</strong>），表面形成的隔熱炭化層能有效阻絕氧氣與高溫，在耐火極限時間內持續保護內部受力木芯的結構強度（符合 EN 1995-1-2 / IBC Type IV-A 耐火等級規範）。</p>
+        </div>
+      </section>
+
+      <!-- 第 2 節：結構比較矩陣表格 -->
+      <section class="content-section">
+        <h2 class="section-title">2. 結構選型橫向比選矩陣</h2>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>材料體系類型</th>
+                <th>結構紋理受力排列</th>
+                <th>典型跨度與受力承載力</th>
+                <th>主要工程建築應用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-highlight">正交膠合木（CLT）</td>
+                <td>3層、5層或7層實木板交錯 90° 正交拼疊層積</td>
+                <td class="span-col">跨度 4.0–8.0 米<br><span class="span-sub">（樓板 / 屋面板）</span></td>
+                <td>雙向受力剛性樓板、剪力牆體、電梯與樓梯井核心筒</td>
+              </tr>
+              <tr>
+                <td class="col-highlight">膠合木梁柱（Glulam）</td>
+                <td>平行紋理指接集成膠合板材</td>
+                <td class="span-col">跨度 6.0–24.0+ 米</td>
+                <td>大載荷主受力柱、大跨度曲面屋面梁及異形大跨度桁架</td>
+              </tr>
+              <tr>
+                <td class="col-highlight">木-混組合結構（TCC）</td>
+                <td>CLT 板透過機械抗剪連接件與薄層混凝土頂板複合受力</td>
+                <td class="span-col">跨度 8.0–12.0+ 米</td>
+                <td>對聲學隔聲降噪與樓蓋自振頻率有極高要求的長跨度商業辦公樓</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第 3 節：採購與供應鏈目錄 -->
+      <section class="content-section">
+        <h2 class="section-title">3. 全球直採與一級供應鏈廠商名錄</h2>
+        
+        <div class="dir-block">
+          <div class="dir-header">
+            <span class="dir-num">1. 國際一級裝配式重型木構製造商</span>
+            <span class="dir-badge">Binderholz / Stora Enso / KLH / Mercer Mass Timber</span>
+          </div>
+          <p class="dir-text">技術規格指定要求具備 PEFC / FSC 雙重森林認證的歐洲雲杉或花旗松原木胚料，數控 CNC 異形精確銑削加工公差嚴格控制在 <strong>±1.0 mm</strong> 以內，並採用無醛環保聚氨酯（PUR）膠黏劑膠合。</p>
+          <div class="procurement-note">
+            <strong>招標採購核對清單：</strong> 審查權威第三方環境產品聲明（EPDs）、聲學實驗室撞擊聲及空氣聲隔聲測試檢驗報告（配合專用隔音墊時 IIC/STC ≥ 55），並核對出廠預鑽孔的隱蔽式五金金屬連接件預留開槽。
+          </div>
+        </div>
+
+        <blockquote class="summary-quote">
+          重型木構將建築結構轉化為可再生的固碳銀行。在方案初期介入工程木構體系，不僅能將現場主體施工週期縮減 30% 以上，還能賦予空間親自然的美學質感與出色的隔熱保溫性能。
+        </blockquote>
+      </section>
+
+      <!-- 頁尾版權 -->
+      <footer class="article-footer">
+        © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
