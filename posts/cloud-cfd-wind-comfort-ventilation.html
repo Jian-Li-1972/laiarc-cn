@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雲端 CFD 風環境與自然通風模擬指南 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          雲端計算流體力學（CFD）：面向建築師的無程式碼風環境與自然通風模擬指南
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          GPU 格子玻爾茲曼（LBM）求解器、羅森（Lawson）行人風舒適度準則、被動式穿堂風與雲端 SaaS 工作流程
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 雲架構下的計算流體力學（CFD）技術變革
+        </h2>
+        <p>
+          微氣候氣流分佈與行人空氣動力學舒適度，在歷史上一直是氣候響應式建築實踐中算力成本最高的領域。傳統的高精度 CFD 數值模擬依賴本機高效能計算（HPC）集群、繁瑣的手動網格劃分，以及複雜難懂的 Linux OpenFOAM 終端命令腳本調試。
+        </p>
+        <p>
+          以 <strong>SimScale</strong> 與 <strong>Ingenero</strong> 為代表的新一代網頁端 SaaS 平臺徹底打破了城市空氣動力學的技術壁壘。得益於大規模並行的 GPU <strong>格子玻爾茲曼方法（LBM）</strong>與雲端自動化網格剖分，建築師如今可以直接基於原生 Rhino/Revit 模型，在數分鐘內完成城市級行人風環境舒適度（PWC）評估與室內熱壓浮力驅動的穿堂風模擬。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">核心空氣動力學控制法則：</strong><br>
+          • <strong>羅森行人舒適度準則（Lawson LDDC）：</strong> 結合季節性風玫瑰圖評估逐時陣風超標機率（$P(v > v_{threshold})$），將室外活動區域嚴格劃分為久坐區（&lt; 4 m/s）、佇立區（&lt; 6 m/s）、漫步區（&lt; 8 m/s）與不舒適區。<br>
+          • <strong>文丘里效應與熱壓通風壓差方程式：</strong> $\Delta P = C_p \cdot \frac{1}{2} \rho v^2 + \rho_0 g h \left(\frac{T_{in} - T_{out}}{T_{in}}\right)$ —— 驅動中庭無機械動力熱壓拔風對流的核心物理機制。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 技術矩陣：雲端 LBM 對比傳統有限體積法（FVM）CFD
+        </h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">模擬評測指標</th>
+              <th style="padding: 10px 14px; text-align: left;">雲端 GPU-LBM (SimScale / SaaS)</th>
+              <th style="padding: 10px 14px; text-align: left;">本機有限體積法 (OpenFOAM / ANSYS)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">數值求解器核心</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">格子玻爾茲曼方法（LBM / Pacefish®）</td>
+              <td style="padding: 10px 14px;">納維-斯托克斯雷諾平均（RANS / k-ε 湍流模型）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">空間網格劃分要求</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">零手動網格處理（自適應八叉樹體素網格）</td>
+              <td style="padding: 10px 14px;">手動貼體棱柱層/四面體非結構網格劃分</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">多風向全年度風場計算</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">16 個風向全部雲端並行求解（&lt; 2 小時完成）</td>
+              <td style="padding: 10px 14px;">各風向串行逐一排隊求解（動輒需要數天）</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">硬體配置與環境依賴</td>
+              <td style="padding: 10px 14px;">100% 網頁瀏覽器純 SaaS，依託分散式雲 GPU</td>
+              <td style="padding: 10px 14px;">專用圖形工作站 / 64 核心本機高性能伺服器叢集</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 城市與建築空氣動力學整合工作流程
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">第一階段：城市冠層與行人風舒適度（PWC）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              匯入總體規劃場地模型。關聯氣象檔案（EPW）風玫瑰數據，執行全自動 16 風向瞬態氣流運算，徹底消除主要步行街道與下沉廣場的狹管效應強風漩渦。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">評測規範：羅森 LDDC 準則與倫敦金融城風環境標準</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">第二階段：立面風壓分佈與自然換氣次數（ACH）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              提取建築外表面風壓係數（$C_p$）分佈雲圖。精確優化可開啟外窗位置、捕風天窗與核心通風煙囪排布，確保過渡季室內達到每小時 4–6 次（ACH）自然空氣置換。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">工程收益：過渡季節完全免除機械製冷空調運行</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳總結 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 雲端計算流體力學（Cloud CFD）將繁複的高等流體力學轉化為直觀敏捷的生成式設計資產。透過以極速的瀏覽器 GPU 運算取代高門檻的終端代碼指令，建築師能夠在方案體量推敲的最早期，精準塑造舒適的微氣候環境並實證被動式自然通風策略。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
