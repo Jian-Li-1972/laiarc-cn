@@ -160,19 +160,6 @@
       background: #101217;
       border-top: 1px solid var(--card-border);
     }
-    .blog-card-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #fff;
-    }
-    .blog-arrow {
-      color: var(--accent-gold);
-      font-size: 18px;
-      transition: transform 0.2s;
-    }
-    .blog-card:hover .blog-arrow {
-      transform: translateX(4px);
-    }
 
     /* === B站播放器區塊 === */
     .section-title {
@@ -283,6 +270,7 @@
     <nav>
       <a href="https://cn.laiarc.com">首頁</a>
       <a href="#blog">專欄文章</a>
+      <a href="#contact">聯絡留言</a>
       <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
       <a href="mailto:contact@laiarc.com">聯絡合作</a>
     </nav>
@@ -304,7 +292,7 @@
       </div>
 
       <div class="blog-grid">
-        <!-- 卡片 1：綠色建築與硬體裝備（包含十一篇文章清單） -->
+        <!-- 卡片 1：綠色建築與硬體裝備 -->
         <div class="blog-card">
           <div class="blog-img-box">
             <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=700&q=80" alt="綠色建築與硬體裝備">
@@ -312,67 +300,46 @@
           <div class="blog-content" style="flex-direction: column; align-items: flex-start; gap: 4px;">
             <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px;">綠色建築與硬體裝備</div>
             
-            <!-- 文章 1 -->
             <a href="./posts/passive-micro-cabin.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 微型被動式生態木屋設計與離網指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 2 -->
             <a href="./posts/passive-vacation-cabin.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 被動式度假微型木屋設計與建造指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 3 -->
             <a href="./posts/generative-ai-computational-passive-design.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 生成式 AI 與運算性被動設計：從模擬到建造</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 4 -->
             <a href="./posts/off-grid-microgrid-engineering.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 離網微電網工程：光伏、儲能與混合動力</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 5 -->
             <a href="./posts/high-performance-fenestration-shading.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 高性能門窗系統與智慧動態遮陽藍圖</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 6 -->
             <a href="./posts/off-grid-solar-battery-sizing.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 微型人居離網太陽能與電池儲能容量定型指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 7 -->
             <a href="./posts/closed-loop-water-waste-systems.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 偏遠微型木屋閉環水資源與排污系統工程</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 8 -->
             <a href="./posts/earth-bermed-subterranean-architecture.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 覆土與地下微型建築：熱物理學與防水構造</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 9 -->
             <a href="./posts/bipv-dc-microgrids.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 光伏建築一體化（BIPV）與直流微電網指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 10 -->
             <a href="./posts/earth-bermed-earth-tubes.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2.5px;">
               <span>• 覆土建築與地源地氣熱交換管（Earth Tubes）設計</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 11：本次新增 -->
             <a href="./posts/atmospheric-water-generation-harvesting.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; padding-top: 1px;">
               <span>• 乾旱人居大氣製水（AWG）與雨水閉環工程</span>
               <span style="color: #eab308;">→</span>
@@ -380,7 +347,7 @@
           </div>
         </div>
 
-        <!-- 卡片 2：設計與效能 SaaS 雲平台（包含十一篇專欄專文） -->
+        <!-- 卡片 2：設計與效能 SaaS 雲平台 -->
         <div class="blog-card">
           <div class="blog-img-box">
             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" alt="設計與效能 SaaS 雲平台">
@@ -388,67 +355,46 @@
           <div class="blog-content" style="flex-direction: column; align-items: flex-start; gap: 3px;">
             <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px;">設計與效能 SaaS 雲平台</div>
             
-            <!-- 文章 1 -->
             <a href="./posts/autodesk-forma-vs-covetool.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• Autodesk Forma vs. Cove.tool：2026永續效能評測</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 2 -->
             <a href="./posts/generative-site-planning-testfit-finch-hypar.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• AI 生成式場地規劃：TestFit vs Finch 3D vs Hypar</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 3 -->
             <a href="./posts/embodied-carbon-building-lca-saas.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 建築隱含碳與 LCA SaaS：One Click LCA vs EC3 vs Tally</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 4 -->
             <a href="./posts/cloud-rendering-realtime-viz-benchmark.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 雲端渲染與即時光追評測：Enscape vs D5 vs Vantage</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 5 -->
             <a href="./posts/diffusion-models-energy-analysis-rhino.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 擴散模型與能耗分析整合：Rhino/ComfyUI 混合工作流</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 6 -->
             <a href="./posts/climatestudio-vs-ladybug-tools.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 採光與熱舒適評測：ClimateStudio vs Ladybug Tools</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 7 -->
             <a href="./posts/one-click-lca-vs-ec3-carbon-accounting.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• One Click LCA vs EC3：現代 BIM 中的隱含碳核算</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 8 -->
             <a href="./posts/generative-ai-massing-solar-optimization.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 生成式 AI 體量推敲與日照最佳化：TestFit vs Finch 3D</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 9 -->
             <a href="./posts/cloud-energy-modeling-sefaira-vs-iesve.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 雲端建築能耗模擬：Sefaira vs IES-VE 實踐評測</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 10 -->
             <a href="./posts/cloud-cfd-wind-comfort-ventilation.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 雲端 CFD：面向建築師的無程式碼風環境模擬</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 11：本次新增 -->
             <a href="./posts/passive-house-planning-online-phpp.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; padding-top: 1px;">
               <span>• 線上被動房策劃：將 PHPP 遷移至雲端工作流程</span>
               <span style="color: #eab308;">→</span>
@@ -456,7 +402,7 @@
           </div>
         </div>
 
-        <!-- 卡片 3：永續材料與前沿生態建造（包含九篇專欄專文） -->
+        <!-- 卡片 3：永續材料與前沿生態建造 -->
         <div class="blog-card">
           <div class="blog-img-box">
             <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=700&q=80" alt="永續材料與前沿生態建造">
@@ -464,61 +410,47 @@
           <div class="blog-content" style="flex-direction: column; align-items: flex-start; gap: 3.5px;">
             <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px;">永續材料與前沿生態建造</div>
             
-            <!-- 文章 1 -->
             <a href="./posts/modular-living-wall-systems.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 模組化立體綠化植生牆系統：設計與工程規範指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 2 -->
             <a href="./posts/bio-based-thermal-insulation-guide.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 生物基保溫隔熱材料選型：木纖維 vs 麻纖維 vs 纖維素</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 3 -->
             <a href="./posts/mass-timber-supply-chain-integration.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 重型木構供應鏈整合：結構工程與一級廠商採購指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 4 -->
             <a href="./posts/sustainable-exterior-rainscreen-cladding.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 永續外牆通風雨幕選型：燒杉 vs 紅雪松 vs 碳化木</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 5 -->
             <a href="./posts/modern-rammed-earth-compressed-earth-blocks.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 現代夯土與壓製生土磚（CEB）：高密度熱容與設備指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 6 -->
             <a href="./posts/smart-vapor-retarders-airtight-tapes.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 智慧阻濕氣密膜與專用密封膠帶：被動房耐候密封指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 7 -->
             <a href="./posts/low-carbon-architectural-finishes.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 低碳室內建築面層：天然石灰抹灰、再生水磨石與生土體系</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 8 -->
             <a href="./posts/low-carbon-concrete-geopolymers.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid #222634; padding-bottom: 2px;">
               <span>• 低碳混凝土與地聚合物膠凝材料：配合比設計與 SCM 指南</span>
               <span style="color: #eab308;">→</span>
             </a>
-
-            <!-- 文章 9：本次新增 -->
             <a href="./posts/high-performance-building-envelopes.html" style="color: #cbd5e1; text-decoration: none; font-size: 11px; display: flex; justify-content: space-between; width: 100%; padding-top: 1px;">
               <span>• 高性能圍護結構：氣密膜、阻濕隔汽與連續外保溫體系</span>
               <span style="color: #eab308;">→</span>
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
     <!-- B站官方播放器嵌入區 -->
     <section class="video-section">
       <div class="section-title">
@@ -527,7 +459,7 @@
 
       <div class="player-wrapper">
         <iframe 
-          id="biliPlayer"
+          id="biliPlayer" 
           src="//player.bilibili.com/player.html?bvid=BV1eham6uENK&page=1&high_quality=1&danmaku=0" 
           scrolling="no" 
           allowfullscreen="true">
@@ -548,6 +480,79 @@
       </a>
     </section>
 
+    <!-- ================= 聯絡留言區塊 (LEAVE A MESSAGE) ================= -->
+    <section id="contact" style="margin-bottom: 40px;">
+      <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 36px 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        
+        <!-- 標題區 -->
+        <div style="text-align: center; margin-bottom: 26px;">
+          <h2 style="color: var(--accent-gold); font-size: 20px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px 0;">
+            在線留言 / LEAVE A MESSAGE
+          </h2>
+          <p style="color: var(--text-sub); font-size: 13.5px; margin: 0;">
+            有項目諮詢、學術交流或商業合作意向？請在下方填寫留言。
+          </p>
+        </div>
+
+        <!-- 表單本體 -->
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 16px;">
+          
+          <!-- 第一排：姓名與郵箱 -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div>
+              <label style="display: block; color: #cbd5e1; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">
+                姓名 / NAME
+              </label>
+              <input type="text" id="formName" required placeholder="您的姓名或稱呼" 
+                style="width: 100%; box-sizing: border-box; background: #07080a; border: 1px solid var(--card-border); border-radius: 6px; padding: 12px 14px; color: #fff; font-size: 13.5px; outline: none; transition: border-color 0.2s;"
+                onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
+            </div>
+
+            <div>
+              <label style="display: block; color: #cbd5e1; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">
+                電子郵箱 / EMAIL
+              </label>
+              <input type="email" id="formEmail" required placeholder="example@domain.com" 
+                style="width: 100%; box-sizing: border-box; background: #07080a; border: 1px solid var(--card-border); border-radius: 6px; padding: 12px 14px; color: #fff; font-size: 13.5px; outline: none; transition: border-color 0.2s;"
+                onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
+            </div>
+          </div>
+
+          <!-- 第二排：主題 -->
+          <div>
+            <label style="display: block; color: #cbd5e1; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">
+              諮詢主題 / SUBJECT
+            </label>
+            <input type="text" id="formSubject" required value="項目諮詢 / Project Inquiry & Feedback" 
+              style="width: 100%; box-sizing: border-box; background: #07080a; border: 1px solid var(--card-border); border-radius: 6px; padding: 12px 14px; color: #fff; font-size: 13.5px; outline: none; transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
+          </div>
+
+          <!-- 第三排：留言內容 -->
+          <div>
+            <label style="display: block; color: #cbd5e1; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">
+              留言內容 / MESSAGE
+            </label>
+            <textarea id="formMessage" rows="5" required placeholder="請在此輸入您的需求、項目背景或具體問題..." 
+              style="width: 100%; box-sizing: border-box; background: #07080a; border: 1px solid var(--card-border); border-radius: 6px; padding: 12px 14px; color: #fff; font-size: 13.5px; outline: none; resize: vertical; transition: border-color 0.2s; font-family: inherit;"
+              onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'"></textarea>
+          </div>
+
+          <!-- 提示訊息欄位 -->
+          <div id="formStatus" style="display: none; padding: 12px; border-radius: 6px; font-size: 13.5px; text-align: center;"></div>
+
+          <!-- 提交按鈕 -->
+          <button type="submit" id="submitBtn"
+            style="width: 100%; background: #07080a; border: 1px solid var(--accent-gold); border-radius: 6px; color: var(--accent-gold); padding: 14px 20px; font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 6px;"
+            onmouseover="this.style.background='var(--accent-gold)'; this.style.color='#000';"
+            onmouseout="this.style.background='#07080a'; this.style.color='var(--accent-gold)';">
+            發送留言 / SEND MESSAGE
+          </button>
+
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -563,6 +568,59 @@
       buttons.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
     }
+
+    // 表單非同步 Fetch 提交邏輯
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      var btn = document.getElementById('submitBtn');
+      var status = document.getElementById('formStatus');
+      
+      btn.disabled = true;
+      btn.innerText = '正在發送中... / SENDING...';
+      btn.style.opacity = '0.6';
+
+      var payload = {
+        name: document.getElementById('formName').value,
+        email: document.getElementById('formEmail').value,
+        _subject: document.getElementById('formSubject').value,
+        message: document.getElementById('formMessage').value,
+        _captcha: 'false'
+      };
+
+      fetch('https://formsubmit.co/ajax/jian@laiarc.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        status.style.display = 'block';
+        status.style.background = '#0d2818';
+        status.style.border = '1px solid #10b981';
+        status.style.color = '#34d399';
+        status.innerText = '✓ 留言已成功送達！我們會盡快與您聯繫。';
+        
+        document.getElementById('contactForm').reset();
+        btn.disabled = false;
+        btn.innerText = '發送留言 / SEND MESSAGE';
+        btn.style.opacity = '1';
+      })
+      .catch(function(error) {
+        status.style.display = 'block';
+        status.style.background = '#2a1215';
+        status.style.border = '1px solid #ef4444';
+        status.style.color = '#f87171';
+        status.innerText = '✕ 發送失敗，請直接來信 contact@laiarc.com 聯繫。';
+        
+        btn.disabled = false;
+        btn.innerText = '重新發送 / TRY AGAIN';
+        btn.style.opacity = '1';
+      });
+    });
   </script>
 </body>
 </html>
