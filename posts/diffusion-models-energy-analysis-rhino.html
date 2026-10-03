@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在 Rhino/Grasshopper 中整合擴散模型與能耗分析 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          在 Rhino/Grasshopper 中將擴散模型與建築能耗分析深度整合
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          ComfyUI ControlNet 工作流、Ladybug 太陽輻射熱力圖、深度條件約束重繪與氣候適應型 AI 形態生成
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 超越視覺幻覺：讓生成式 AI 紮根於物理法則
+        </h2>
+        <p>
+          二維生成式擴散模型（如 Midjourney、Stable Diffusion）徹底革新了建築概念視覺化的表達方式，但其在專業實踐中的根本缺陷是缺乏物理邊界約束——往往生成脫離結構力學邏輯、太陽朝向與氣候響應效能的不可建造幾何體。
+        </p>
+        <p>
+          解決方案在於構建<strong>混合運算橋樑</strong>：將 <strong>Rhino / Grasshopper / Ladybug Tools</strong> 的精確參數化幾何形體與環境分析網格，透過多通道 <strong>ControlNet 條件約束</strong>（深度圖 Depth、法線通道 Normal 與色彩熱力圖），無縫接入節點式擴散引擎（如 <strong>ComfyUI</strong>）。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">氣候適應型擴散模型約束矩陣：</strong><br>
+          • <strong>結構錨定（ControlNet Depth / LineArt）：</strong> 強制鎖定建築空間輪廓線、結構柱網體系與層高淨空尺寸。<br>
+          • <strong>效能熱力圖約束（ControlNet Segmentation / IP-Adapter）：</strong> 將 Ladybug 輸出的太陽輻射假彩色網格注入潛在空間（Latent Space），引導 AI 在高輻射得熱區域自動生成密集的遮陽百葉，在低暴露區段生成開闊的採光玻璃。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 混合運算工作流步驟解析
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">第一步：參數化太陽輻射分析</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              在 Rhino 中建立基準體量。運行 Ladybug 太陽入射輻射分析，生成頂點著色的假彩色網格，直觀顯示各立面朝向的全年累計輻射得熱量（kWh/m²）。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">數據依據：三維表面映射的精確日照暴露值</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">第二步：多通道緩衝渲染通道匯出</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              從 Rhino 同步視角匯出三個對齊通道：(1) Z 軸深度緩衝通道（Depth），(2) 表面法線通道（Normal），以及 (3) 環境分析假彩色渲染通道。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">文件格式：16 位元 PNG 幾何約束通道</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">第三步：ComfyUI 潛在空間局部重繪</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              將上述通道載入 ComfyUI 工作流。搭配親生物材質提示詞（如<em>「建築重型木構百葉、高性能三玻兩腔幕牆、立體垂直綠化」</em>），生成兼具真實感與建造可行性的方案概念。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">產出成果：符合遮陽物理邏輯的照片級方案</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳總結 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 將生成式擴散模型管線與參數化太陽能物理分析直接結合，讓建築師在釋放 AI 極速創意的同時，保持結構的嚴謹性與氣候響應的真實性。運算性設計的未來，正處於數值模擬與視覺生成的交會之處。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
