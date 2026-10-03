@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雲端建築能耗模擬：Sefaira 對比 IES-VE 實踐評測 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          雲端建築能耗模擬：Sefaira 對比 IES-VE 在現代實踐中的深度評測
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          EnergyPlus 對比 ApacheSim、即時綜合能耗強度（EUI）對標、精細化機電暖通容量定型與 ASHRAE 90.1 規範合規性
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 建築能耗模擬（BEM）的應用維度分佈
+        </h2>
+        <p>
+          在高性能氣候響應式建築實踐中，建築能耗模擬（BEM）扮演著兩項涇渭分明的核心角色：前期體量推敲階段的<strong>快速趨勢回饋</strong>，以及方案深化階段的<strong>嚴謹工程合規校核</strong>。在傳統工作流程中，建築師探索概念體量與機電（MEP）工程師執行穩態熱負荷計算之間長期存在著斷層與脫節。
+        </p>
+        <p>
+          現代雲端軟體生態跨越了這一鴻溝。建築師與建築物理學者主要在兩大標竿平臺之間進行技術選型：<strong>Trimble Sefaira</strong>（專為在 SketchUp 與 Revit 內部提供即時、雲端運算的概念能耗與採光回饋而設計）與 <strong>IES-VE（虛擬環境整合環境解決方案）</strong>（動態熱物理模擬、精細化暖通機房容量定型與法規送審申報的黃金標準）。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">核心能耗指標與熱物理控制方程：</strong><br>
+          • <strong>建築能耗強度（EUI [kWh/m²/年 或 kBtu/ft²/年]）：</strong> 全年場地總能耗 / 建築總建築面積。<br>
+          • <strong>建築顯熱平衡控制方程：</strong> <em>Q<sub>sensible</sub></em> = ∑ <em>U</em>·<em>A</em>·(<em>T<sub>out</sub></em> − <em>T<sub>in</sub></em>) + <em>Q<sub>solar</sub></em> + <em>Q<sub>internal</sub></em>（人員、照明、設備得熱）+ <em>ṁ·C<sub>p</sub></em>·(<em>T<sub>ambient</sub></em> − <em>T<sub>room</sub></em>) [滲透風/通風換氣熱負荷]。<br>
+          • <strong>峰值冷熱負荷：</strong> 決定冷水機組、鍋爐裝機容量與機房佔地面積的極值製冷與採暖功率需求（$kW_{th}$）。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 功能維度與技術規格橫向評測
+        </h2>
+        <p>
+          在 Sefaira 與 IES-VE 之間進行選擇，取決於具體專案階段、所需計算顆粒度以及使用者的專業背景定位（主創方案建築師 vs. 註冊機電暖通工程師）：
+        </p>
+
+        <!-- 技術參數表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">評測維度</th>
+              <th style="padding: 10px 14px; text-align: left;">Trimble Sefaira</th>
+              <th style="padding: 10px 14px; text-align: left;">IES-VE (Virtual Environment)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">底層物理與熱工引擎</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">EnergyPlus 與 Radiance（雲端並行運算）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">ApacheSim（第一性原理動態熱模擬求解器）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">主要面向使用者與專案階段</td>
+              <td style="padding: 10px 14px; color: #d4af37;">方案設計主創 / 概念策劃至方案草圖階段</td>
+              <td style="padding: 10px 14px; color: #d4af37;">暖通機電工程師與綠建顧問 / 擴初至竣工圖階段</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">計算速度與反饋週期</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">隨幾何模型修改呈現準即時動態反饋</td>
+              <td style="padding: 10px 14px;">高精度批次離線計算（耗時數分鐘至數小時）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">暖通空調建模顆粒度</td>
+              <td style="padding: 10px 14px;">分區理想空氣負荷與標準原型系統範本</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">完整原理圖級風水管網系統迴路與中央主機（ApacheHVAC）</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">規範合規性與認證支援</td>
+              <td style="padding: 10px 14px;">AIA 2030 承諾指標、LEED 概念級 EUI 目標</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">ASHRAE 90.1 PRM 附錄 G、Title 24、Part L、BREEAM、Green Star</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 跨階段一體化能耗模擬實戰工作流程
+        </h2>
+        <p>
+          高品質建築實踐打破了孤立的「資訊孤島式建模」，將前期建築形體假設直接傳遞至後續深化工程模型中：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">第一階段：被動式圍護結構優化（Sefaira）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              在 SketchUp/Revit 內部測試窗牆比（WWR）、挑簷遮陽深度與圍護保溫厚度。利用 Sefaira 的能耗響應敏感性曲線，快速識別製冷與採暖的主要主導因素。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">目標成果：優化圍護結構幾何尺寸並確立基準 EUI 指標</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">第二階段：熱分區與宏觀空氣流動（IES-VE）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              將 gbXML / IFC 幾何模型導出至 IES-VE。賦予精細的人員在室作息表與室內設備發熱強度，運行 MacroFlo 模組模擬自然熱壓浮力與穿堂風換氣率。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">目標成果：精確測算自然通風有效利用時數與逐時分區負荷</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">第三階段：機房容量定型與法規合規申報（IES-VE）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              在 ApacheHVAC 內建置複雜暖通系統拓撲（如地源熱泵系統配合專用室外新風系統 DOAS）。生成經過嚴格驗證的 ASHRAE 90.1 附錄 G 認證申報報告。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">目標成果：機電設備容量精準定型與綠建申報送審</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 決策矩陣：選擇最適配的能耗模擬工具棧
+        </h2>
+
+        <!-- 平臺 1 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>1. Trimble Sefaira 部署定位</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">建築方案事務所與快速概念方案迭代</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>最佳適用對象：</strong> 希望在 SketchUp/Revit 內直接獲得採光與能耗回饋、無需專職 BEM 能耗工程師專業背景的建築設計團隊。</li>
+            <li><strong>核心優勢：</strong> 在方案評審討論過程中，即時呈現採暖與製冷平衡圖以及全年採光自主度（sDA / ASE）柱狀圖。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>戰略部署建議：</strong> 為專案主創配置 Sefaira 席位，在向業主匯報前追蹤 AIA 2030 承諾的 EUI 指標達成率。
+          </div>
+        </div>
+
+        <!-- 平臺 2 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>2. IES-VE 軟體套件部署定位</span>
+            <span style="font-size: 13px; color: #4caf50; background: #1b261b; padding: 3px 8px; border-radius: 4px;">機電工程顧問與頂級綠建永續實驗室</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>最佳適用對象：</strong> 建築物理效能分析專家、MEP 機電諮詢顧問，以及需要完全自訂機械系統管路迴路的被動房/淨零能耗工程團隊。</li>
+            <li><strong>核心優勢：</strong> 基於第一性原理的熱力學計算、動態宏觀空氣流動模擬（MacroFlo），以及適配全球各國節能標準的合規校核。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>戰略部署建議：</strong> 使用 IES-VE 進行深度機電設備選型，驗證冷水機組/熱泵的實際性能係數（COP）曲線，並出具官方節能備案報告。
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳總結 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 建築能耗模擬已不再是設計下游的事後審查，而是演進為引導方案生成的基礎工具。透過在草圖形體推敲階段部署 Sefaira 的快速雲端回饋，並在深化設計中無縫過渡至 IES-VE 的物理動態熱模擬，設計團隊能夠打造出真正兼具數據驗證支持與極致營運能效的淨零建築。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
