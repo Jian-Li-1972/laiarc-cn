@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 請修改：瀏覽器分頁標題 -->
+  <title>綠色建築與被動式生態硬體設計 | LAIARC 專欄</title>
+  <style>
+    :root {
+      --bg-dark: #0a0b0e;
+      --card-bg: #14171f;
+      --card-border: #222634;
+      --accent-gold: #eab308;
+      --accent-blue: #00aeec;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.85;
+    }
+
+    /* 頂部導航 */
+    header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--text-sub);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* 文章主體容器 */
+    .post-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 28px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+
+    /* 標題與元資訊 */
+    h1.article-title {
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1.35;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 13px;
+      color: var(--text-sub);
+      padding-bottom: 20px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* 正文排版 */
+    .article-body {
+      font-size: 16px;
+      color: #cbd5e1;
+    }
+    .article-body p {
+      margin-bottom: 22px;
+      text-align: justify;
+    }
+    .article-body h2 {
+      font-size: 22px;
+      color: #ffffff;
+      margin: 44px 0 18px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent-gold);
+    }
+    .article-body h3 {
+      font-size: 18px;
+      color: #f1f5f9;
+      margin: 28px 0 14px;
+    }
+    .article-body blockquote {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent-blue);
+      padding: 16px 20px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+      color: #94a3b8;
+      font-style: italic;
+    }
+    .article-body img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 24px 0 10px;
+      border: 1px solid var(--card-border);
+      display: block;
+    }
+    .img-caption {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+    }
+
+    /* 頁腳 */
+    footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer a {
+      color: var(--text-sub);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導航 -->
+  <header>
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <!-- 文章主體 -->
+  <article class="post-container">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 請修改：文章主標題 -->
+    <h1 class="article-title">綠色建築與被動式生態硬體設計</h1>
+    <div class="article-meta">
+      <span>發布時間：2026年10月</span>
+      <span>作者：LAIARC</span>
+      <span>分類：生態建築 · 硬體裝備</span>
+    </div>
+
+    <!-- 正文內容：可自由增刪段落與小標題 -->
+    <div class="article-body">
+      <p>在現代生態人居的實踐中，建築不再只是靜態的庇護所，而是具備呼吸感與能量自主調節的生命體。透過人工智慧演算法與被動式建築設計的結合，我們得以重構人、空間與自然微氣候的共生關係。</p>
+
+      <h2>1. 被動式微氣候調節與空間構造</h2>
+      <p>被動式節能設計強調不依賴高能耗機械空調，而是利用自然風壓、熱壓浮力與建築導風結構實現室內空氣循環。結合當地日照軌跡，優化外立面遮陽百葉角度，有效降低夏季熱輻射負荷。</p>
+
+      <!-- 配圖與說明 -->
+      <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1000&q=80" alt="生態木屋被動式設計">
+      <div class="img-caption">圖 1：高架懸挑結構與周邊植被形成的微氣候導風系統</div>
+
+      <blockquote>
+        「建築的最高形式，是隱入自然，借由風、光、水、土的力量自行運轉。」
+      </blockquote>
+
+      <h2>2. 硬體裝備與永續材料的整合應用</h2>
+      <p>離網生活的核心在於能源與水循環閉環。採用模組化太陽能儲能單元、雨水回收多級過濾設備，並搭配低碳生質木構材料，在確保結構強度的同時大幅降低隱含碳排放。</p>
+      <p>未來我們將持續探索更多 AI 生成式推演與低能耗建築構造的落地實例，為創作者與建築師提供可直接借鑒的工程方案。</p>
+    </div>
+  </article>
+
+  <!-- 頁腳 -->
+  <footer>
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
