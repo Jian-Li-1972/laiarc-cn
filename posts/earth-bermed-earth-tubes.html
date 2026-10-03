@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>覆土建築與地源地氣熱交換管：地熱耦合被動式暖通空調設計 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          覆土建築與地源地氣熱交換管：地熱耦合被動式暖通空調設計
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          地熱熱慣性、地氣熱交換系統（EAHE）、冷凝水導流工程與太陽能煙囪熱拔風整合
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 地下環境的熱慣性效應
+        </h2>
+        <p>
+          在地下深度超過 <strong>2.5 至 4.0 米</strong>處，原狀土壤溫度不再受地表日夜晝夜溫差的劇烈波動影響，而是穩定在接近年平均地表氣溫的極窄區間內。<strong>覆土式建築</strong>充分利用這座龐大的熱飛輪效應，大幅降低建築圍護結構的導熱負荷，並使建築在極端高山寒流或乾旱荒漠高溫下保持卓越的熱緩衝能力。
+        </p>
+        <p>
+          當與<strong>地氣熱交換系統（Earth-to-Air Heat Exchangers / EAHE 地氣管道）</strong>協同運作時，室外新鮮新風透過預埋於地下的導熱管網引入，在炎夏自然預冷室外熱空氣（$> 35^\circ\text{C} \rightarrow 22^\circ\text{C}$），並在嚴冬預熱冰冷空氣（$< -10^\circ\text{C} \rightarrow 8^\circ\text{C}$），在幾近零機械壓縮機能耗的前提下將預調溫空氣送入室內。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">地下熱傳導與 EAHE 熱力學計算公式：</strong><br>
+          • <strong>土壤深度（$z$）與時間（$t$）的溫度分佈：</strong> $T(z, t) = T_{mean} - A_0 \cdot \exp\left(-z \sqrt{\frac{\pi}{\alpha \cdot 365}}\right) \cdot \cos\left(\frac{2\pi}{365}\left(t - t_0 - \frac{z}{2}\sqrt{\frac{365}{\pi \alpha}}\right)\right)$<br>
+          • <strong>管道內對流換熱量：</strong> $Q = \dot{m} \cdot C_p \cdot (T_{out} - T_{in}) = h_c \cdot A_{pipe} \cdot \Delta T_{LMTD}$ [瓦特]，其中對流換熱係數 $h_c$ 取決於紊流狀態下的雷諾數（$Re$）與努塞爾特數（$Nu$）。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 地氣管路硬體工程參數規範
+        </h2>
+        <p>
+          未經精密工程設計的地下通風管道極易引發霉菌滋生、氡氣滲漏或熱交換效率不足。必須嚴格遵循以下機械硬體工程標準：
+        </p>
+
+        <!-- 技術參數表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">工程參數指標</th>
+              <th style="padding: 10px 14px; text-align: left;">最佳工程技術指標</th>
+              <th style="padding: 10px 14px; text-align: left;">物理機制與工程原由</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">埋設深度（$z$）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">室外完成面下 2.5 米至 3.5 米</td>
+              <td style="padding: 10px 14px;">避開晝夜溫度波動層，直達全年恆溫土層。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">管材材質與內襯</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">食品級聚丙烯（PP），帶銀離子抗菌內層</td>
+              <td style="padding: 10px 14px;">抑制微生物生物膜滋生；無 PVC 塑化劑 VOC 揮發；抗外壓環剛度等級達 SN8。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">管內空氣流速（$v$）</td>
+              <td style="padding: 10px 14px; color: #d4af37; font-weight: bold;">1.5 m/s 至 2.5 m/s</td>
+              <td style="padding: 10px 14px;">確保對流紊流換熱效率，同時避免產生過大的風阻靜壓損失。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">排水坡度與集水井</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">$\ge 2.0\%$ 連續坡向末端冷凝水集水井</td>
+              <td style="padding: 10px 14px;">夏季高溫高濕空氣預冷時產生的冷凝水必須及時順暢導排。</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">管徑與管間距</td>
+              <td style="padding: 10px 14px;">$\varnothing 200\text{ mm}$；中心間距 $\ge 1.0\text{ 米}$</td>
+              <td style="padding: 10px 14px;">防止長週期運行時管周土壤局部發生熱飽和現象。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 零能耗混合式被動通風循環迴路
+        </h2>
+        <p>
+          一套優化的覆土建築系統將地下預埋進氣管路與屋頂<strong>太陽能煙囪（Solar Chimney）</strong>無縫串聯，構建出完全無需機械風機的熱壓浮力驅動閉環：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">1. 進風採氣與多級初中效過濾</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              新風透過高於地坪 1.2 米的戶外遮陽不鏽鋼進氣塔吸入。氣流依序經過 G4 防蟲粗效濾網與 F7/HEPA 花粉濾網，確保潔淨空氣進入地下管網。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">空氣品質：杜絕昆蟲雜質、過濾花粉塵埃</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">2. 地熱耦合換熱與冷凝水導流</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              氣流穿流於 35–50 米長埋地抗菌管道中，在夏季將熱量散發至涼爽大地，或在冬季吸收地層恆溫熱能。水封存水彎集水井自動將所有冷凝水排淨。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">調溫效能：實現 8°C–14°C 的純被動溫差調節</span>
+          </div>
+
+          <div style="background: #181818; border-left: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px; background: #181818;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">3. 太陽能煙囪熱拔風負壓抽吸</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              朝南佈置的屋面玻璃太陽能煙囪持續加熱頂部排風，加速上升熱壓浮力效應（$\Delta P = \rho g h \Delta T / T$）。產生的微負壓持續將調溫新風自地氣管抽吸進室內。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">能耗表現：0 瓦全天候被動對流循環</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 地下防水防潮與結構圍護構造
+        </h2>
+
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>覆土牆體工程構造分層</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">CSI MasterFormat 分類 07 10 00 / 33 51 00</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>承重結構層：</strong> 大體量現澆鋼筋混凝土，內摻結晶自癒防水母料（如 Krystol Internal Membrane / 澎內傳 Penetron）。</li>
+            <li><strong>雙層防水屏障：</strong> 滿粘熱熔橡膠瀝青防水卷材或厚層高密度聚乙烯（HDPE）防根穿防水膜，外覆高強凸起盲溝排水板（Delta-MS 系列）。</li>
+            <li><strong>基礎盲溝排水系統：</strong> 基礎承台水平高度鋪設外裹土工布連續打孔排水管，埋於洗淨碎石層內，依靠重力自然順暢排水。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 覆土建築與地熱耦合熱交換管將人居空間無縫融入區域地質熱力學循環。藉由深層土壤的恆溫穩定性與太陽能煙囪熱拔風壓力，完全取代了高維護成本的機械製冷壓縮機，實現了極致寧靜、自然舒適與抗逆自給的現代離網人居。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
