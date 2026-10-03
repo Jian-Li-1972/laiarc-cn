@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>偏遠微型木屋閉環水資源與排污系統工程 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          偏遠微型木屋閉環水資源與排污系統工程
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          雨水收集容量計算、多級 UV 飲用水過濾、人工灰水濕地與無水生態堆肥馬桶
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 水文自主性：雨水收集容量定型與屋面匯水物理學
+        </h2>
+        <p>
+          在離網微型木屋中實現完全的水資源自給，必須將屋頂圍護體視為動態的水文收集介面。離網供水系統的容量計算必須綜合考量當地降雨季節性特徵、屋面材料徑流係數以及初期雨水棄流（First-Flush）機制，以防止大氣沈降顆粒與雜質污染主儲水箱。
+        </p>
+        <p>
+          飲用水收集屋面必須嚴格選用無毒、無析出特性的材料（例如直立鎖邊金屬屋面、原廠高溫烤漆鋼板或天然頁岩瓦）。瀝青瓦、含鉛泛水收邊與未經環保處理的防腐木瓦會向蓄水池中溶出石油烴類化學物質與重金屬，禁止用於飲用水收集。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">水文收集與初期雨水棄流計算公式：</strong><br>
+          • <strong>年雨水收集潛力（<em>Y<sub>annual</sub></em>）：</strong> 年降雨量（<em>R [mm]</em>）× 屋頂投影面積（<em>A [m²]</em>）× 徑流係數（金屬屋面 <em>C<sub>e</sub> ≈ 0.85–0.90</em>）× 初級過濾效率（<em>η<sub>f</sub> ≈ 0.95</em>）<br>
+          • <strong>初期雨水棄流容積：</strong> 在雨水進入生活飲用水水窖前，每平方米屋頂集水面積至少必須棄流 <strong>1.5 至 2.0 公升</strong>初期雨水。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 多重屏障飲用水淨化過濾鏈標準
+        </h2>
+        <p>
+          未經處理的原生雨水含有大氣懸浮顆粒物、鳥類排泄物、微生物孢子以及溶解性揮發性有機物（VOCs）。多重屏障淨化處理鏈可在不進行化學加氯消毒的前提下，確保水質完全達到飲用水標準：
+        </p>
+
+        <!-- 技術規格表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">過濾處理階段</th>
+              <th style="padding: 10px 14px; text-align: left;">過濾介質 / 孔徑精度</th>
+              <th style="padding: 10px 14px; text-align: left;">去除目標污染物</th>
+              <th style="padding: 10px 14px; text-align: left;">維護與更換週期</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">1. 泥沙前置微濾</td>
+              <td style="padding: 10px 14px; color: #4caf50;">5 微米（µm）熔噴聚丙烯濾芯</td>
+              <td style="padding: 10px 14px;">泥沙、鐵鏽、花粉、懸浮物及大顆粒雜質</td>
+              <td style="padding: 10px 14px;">每季度反沖洗 / 每 6 個月更換濾芯</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">2. 燒結活性炭棒</td>
+              <td style="padding: 10px 14px; color: #4caf50;">1 微米（µm）高碘值椰殼活性炭</td>
+              <td style="padding: 10px 14px;">VOCs、腐殖酸、化學異味、農藥殘留與重金屬離子</td>
+              <td style="padding: 10px 14px;">6 至 12 個月</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">3. 紫外線（UV）消殺儀</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">254 nm 殺菌波長（劑量 ≥ 30 mJ/cm²）</td>
+              <td style="padding: 10px 14px;">99.99% 大腸桿菌、賈第鞭毛蟲、隱孢子蟲及病毒病原體</td>
+              <td style="padding: 10px 14px; color: #d4af37; font-weight: bold;">每年定期更換 UV 燈管（運行 9,000 小時）</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 生物人工灰水濕地與源頭分離生態堆肥衛生系統
+        </h2>
+        <p>
+          實現完全的水循環閉環，核心在於從源頭分離黑水（糞尿排泄物）與灰水（淋浴、洗手盆、洗衣廢水）：
+        </p>
+
+        <!-- 卡片區塊 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">潛流人工濕地淨化系統（灰水處理）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              灰水經室外碎石與蘆葦/香蒲床（鋪設 EPDM 防滲防根穿膜）過濾。植物根際共生微生物自然分解表面活性劑與有機物，無地表積水、無異味，亦無蚊蟲滋生。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">淨化產出：地下滴灌景觀與林地灌溉水</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">源頭尿液分離乾式堆肥馬桶</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              從源頭分離液體尿液與固體排泄物，消除產生惡臭的厭氧發酵條件。超低功耗 12V 靜音排風扇持續脫水乾燥固體，數月內即可將其轉化為無臭、無病原體的安全腐殖質。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">節能效益：完全免除黑水排污管網與化糞池</span>
+          </div>
+        </div>
+
+        <div style="background: #181818; border-left: 3px solid #d4af37; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px;">
+          <strong style="color: #d4af37;">冬季防凍維護措施：</strong> 室外蓄水池與裸露的 PEX 給水管路必須深埋於當地凍土線以下，或外包覆閉孔橡塑保溫管並纏繞 12V/24V 低壓直流自限溫伴熱帶。
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 水資源與衛生核心硬體採購目錄
+        </h2>
+
+        <!-- 供應商 1 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>1. 高性能飲用水過濾與 UV 消毒設備</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">VIQUA / Pentair（濱特爾）/ RainFlo</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>一體化壁掛式 UV 淨化機組：</strong> VIQUA IHS12-D4 / IHS22-E4 壁掛式三級一體機（流量 12 GPM，整合微濾、碳棒與 UV 滅菌）。</li>
+            <li><strong>低功耗直流穩壓水泵：</strong> Shurflo 4008 12V/24V 直流自吸隔膜增壓泵。</li>
+            <li><strong>旋流初期雨水棄流裝置：</strong> Rain Harvesting (Blue Mountain Co.) 商用屋頂雨水清洗棄流總成。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>採購管道指引：</strong> 經由正規水處理工程商採購通過 NSF/ANSI 55 A 級認證的 UV 殺菌設備與食品級高密度聚乙烯（HDPE）食品級儲水箱。
+          </div>
+        </div>
+
+        <!-- 供應商 2 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>2. 認證乾式生態衛生與堆肥馬桶系統</span>
+            <span style="font-size: 13px; color: #4caf50; background: #1b261b; padding: 3px 8px; border-radius: 4px;">Separett / Nature's Head / Sun-Mar</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>尿液分離堆肥馬桶：</strong> 瑞典 Separett Villa / Tiny 12V 直流系列，配備自動旋轉遮蔽擋板。</li>
+            <li><strong>一體化緊湊型乾式馬桶：</strong> Nature's Head 航海級無水馬桶，帶手動攪拌手柄。</li>
+            <li><strong>灰水隔油攔截器：</strong> 檯下型生物隔油沉澱池與耐老化 EPDM 濕地防水膜。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>專業供貨通道：</strong> 透過生態綠色建材批發通路採購無水生態馬桶主機、屋面通風穿透件及天然椰糠壓縮磚膨鬆介質。
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 閉環水資源與無水生態排污設計是實現真正離網建築主權的基石。藉由初期雨水棄流、高精度多級 UV 淨化、潛流人工濕地與無水生物衛生系統的深度協同，微型人居在完全脫離市政管網的嚴苛條件下，依然能建立高度安全、長久穩定的水文自給閉環。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
