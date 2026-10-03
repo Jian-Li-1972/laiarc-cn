@@ -95,83 +95,48 @@
     }
 
     /* === BLOG 專欄區塊樣式 === */
-    .blog-section {
-      margin-bottom: 50px;
-    }
-    .blog-header {
-      display: flex;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .blog-badge {
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--accent-gold);
-      letter-spacing: 1px;
-    }
-    .blog-desc {
-      font-size: 15px;
-      color: var(--text-sub);
-    }
+    <!-- BLOG 專欄區塊 -->
+    <section class="blog-section" id="blog">
+      <div class="blog-header">
+        <span class="blog-badge">專欄 BLOG</span>
+        <span class="blog-desc">融合生成式 AI、微氣候模擬運算與高效能生態建築解決方案，賦能建築師與空間創作者。</span>
+      </div>
 
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .blog-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .blog-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b4256;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
-    .blog-img-box {
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-      background: #111;
-    }
-    .blog-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .blog-card:hover .blog-img-box img {
-      transform: scale(1.04);
-    }
-    .blog-content {
-      padding: 20px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #101217;
-      border-top: 1px solid var(--card-border);
-    }
-    .blog-card-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-    }
-    .blog-arrow {
-      color: var(--accent-gold);
-      font-size: 18px;
-      transition: transform 0.2s;
-    }
-    .blog-card:hover .blog-arrow {
-      transform: translateX(4px);
-    }
+      <div class="blog-grid">
+        <!-- 卡片 1：點擊跳轉至已建立的文章 -->
+        <a href="./posts/green-architecture.html" class="blog-card">
+          <div class="blog-img-box">
+            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=700&q=80" alt="綠色建築與硬體裝備">
+          </div>
+          <div class="blog-content">
+            <span class="blog-card-title">綠色建築與硬體裝備</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- 卡片 2 -->
+        <a href="./posts/green-architecture.html" class="blog-card">
+          <div class="blog-img-box">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" alt="設計與效能 SaaS 雲平台">
+          </div>
+          <div class="blog-content">
+            <span class="blog-card-title">設計與效能 SaaS 雲平台</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- 卡片 3 -->
+        <a href="./posts/green-architecture.html" class="blog-card">
+          <div class="blog-img-box">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" alt="生態材料與循環供應鏈">
+          </div>
+          <div class="blog-content">
+            <span class="blog-card-title">生態材料與綠色供應鏈</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
     /* === B站播放器區塊 === */
     .section-title {
