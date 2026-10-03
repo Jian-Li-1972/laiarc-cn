@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Click LCA 對比 EC3：現代 BIM 中的建築隱含碳核算 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          One Click LCA 對比 EC3：現代 BIM 中的建築隱含碳核算與供應鏈採購指南
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          A1–A5 前期碳排放、EPD 數據庫映射、BIM 自動化工程算量與 LEED/BREEAM 認證合規平臺
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 當代建築中隱含碳核算的剛性要求
+        </h2>
+        <p>
+          隨著超高效能圍護結構與可再生能源技術的成熟，建築營運階段的碳排放正迅速逼近淨零閾值。相應地，<strong>隱含碳（Embodied Carbon）</strong>——即建材開採、生產製造、物流運輸、施工建造以及生命週期末期拆除處置全過程所產生的溫室氣體（GHG）排放——已佔據現代新建建築全生命週期總碳足跡的 <strong>50% 至 70%</strong> 以上。
+        </p>
+        <p>
+          開展精準的建築生命週期評估（LCA）離不開與建築資訊模型（BIM）的深度整合。目前業界形成了兩大核心雲端 SaaS 平臺：<strong>One Click LCA</strong>（全球全生命週期認證合規標竿）與 <strong>EC3（施工隱含碳計算器）</strong>（面向供應鏈材料採購的開放平臺）。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">EN 15978 生命週期階段與碳核算公式：</strong><br>
+          • <strong>前期隱含碳（<em>EC<sub>upfront</sub></em>）：</strong> ∑ [ 材料工程量 (<em>Q<sub>i</sub> [kg, m³]</em>) × 出廠碳排放因子 (<em>A1–A3 [kg CO₂e / 單位]</em>) ] + 物流運輸 (<em>A4</em>) + 現場裝配建造 (<em>A5</em>)<br>
+          • <strong>全生命週期總碳排放（<em>EC<sub>total</sub></em>）：</strong> 前期隱含碳 (<em>A1–A5</em>) + 運營期材料置換 (<em>B1–B5</em>) + 拆除清理 (<em>C1–C4</em>) − 循環再利用收益 (<em>模組 D</em>)
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 功能維度與技術規格橫向評測
+        </h2>
+        <p>
+          兩款平臺均支援直接讀取三維幾何模型與材料清單（BOM）數據，但其分析邊界與對應的專案階段具有本質區別：
+        </p>
+
+        <!-- 技術參數表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">評測維度</th>
+              <th style="padding: 10px 14px; text-align: left;">One Click LCA</th>
+              <th style="padding: 10px 14px; text-align: left;">EC3 (BuildingTransparency)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">LCA 評價範圍與覆蓋階段</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">搖籃到墳墓全生命週期（模組 A1–A5, B1–B7, C1–C4, D）</td>
+              <td style="padding: 10px 14px; color: #d4af37;">聚焦前期搖籃到大門階段（模組 A1–A3 / A1–A5）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">EPD 數據庫覆蓋體量</td>
+              <td style="padding: 10px 14px;">200,000+ 條全球權威驗證 EPD、區域基準數據及專有 EPD</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">150,000+ 條北美與歐洲具體生產商工廠級 EPD</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">BIM 與主流程軟體互操作性</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">Autodesk Revit、Rhino/Grasshopper、Archicad、Tekla、IFC、Excel</td>
+              <td style="padding: 10px 14px;">Autodesk Construction Cloud (ACC)、BIM 360、Tally、Excel</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">綠色建築認證標準適配</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">LEED v4/v4.1、BREEAM、DGNB、Level(s)、RE2020、Green Star</td>
+              <td style="padding: 10px 14px;">LEED v4.1 MR 得分項（EPD 及隱含碳減排）、清潔採購法案</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">授權與商業模式</td>
+              <td style="padding: 10px 14px;">商業企業級 SaaS 訂閱（按席位/企業級別授權）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">免費開源雲端平臺（產業基金會資助支援）</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. BIM 驅動的低碳計算一體化工作流程
+        </h2>
+        <p>
+          高效的建築脫碳工作流涵蓋從方案初期的結構主體比選，一直延伸到施工階段承包商材料報審的閉環驗證：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">第一階段：前期結構體系優化（方案草圖）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              將 Rhino/Revit 中的初步體量一鍵匯出至 One Click LCA。橫向對比重型木結構、低碳混凝土框架與再生鋼結構方案，鎖定超越 30% 的基礎減碳空間。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">目標成果：確定主體結構選型碳排放基準線</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">第二階段：材料技術規格與 GWP 碳限值（深化設計）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              利用 EC3 區域市場分佈數據庫，在技術規格書中明確混凝土配合比的最大全球變暖潛能值（GWP）閾值（明確礦渣/粉煤灰替代率 &ge; 40%）及鋼筋採購指標。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">目標成果：在工程技術招標文件中落實低碳採購剛性條款</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">第三階段：竣工復核與綠色建築認證（施工交付）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              將總包單位提交的鋼廠質量證明書與經第三方驗證的生產廠具體 EPD 導入 One Click LCA / EC3，生成符合 LEED v4.1 與 BREEAM 申報要求的最終審計憑據。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">目標成果：獲得經過審計的 10%–40% 隱含碳減排綠建得分</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 戰略選型建議：LCA 評估與供應鏈採購的協同策略
+        </h2>
+
+        <!-- 平臺 1 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>1. One Click LCA 部署定位</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">整體建築 LCA 與國際認證申報</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>團隊職能分工：</strong> 承擔設計階段整體建築生命週期評估（WBLCA）、應對強制性全生命週期碳排放法規審查，以及綠建標籤多項加分核算。</li>
+            <li><strong>關鍵優勢：</strong> 具備自動化 BIM 圖層材料映射功能，內建覆蓋全球 150 多個國家的預先驗證區域數據庫。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>工作流建議：</strong> 直連 Revit 或 Rhino 模型，在方案評審會議中即時動態比選圍護結構與主體框架的碳排代價。
+          </div>
+        </div>
+
+        <!-- 平臺 2 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>2. EC3 平臺部署定位</span>
+            <span style="font-size: 13px; color: #4caf50; background: #1b261b; padding: 3px 8px; border-radius: 4px;">供應鏈透明度與材料招採落地</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>團隊職能分工：</strong> 混凝土攪拌站比選、鋼鐵廠 GWP 指標橫向比價，以及輔助招投標合約約束。</li>
+            <li><strong>關鍵優勢：</strong> 支援對真實工廠的第三方驗證 EPD 進行即時篩選，內建數據離散度分析功能。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>工作流建議：</strong> 將 EC3 篩選鎖定的實際材料採購數據反饋給 One Click LCA 竣工模型，向業主交付具備法律效力的實測減碳成果。
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳總結 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 建築隱含碳核算將被動式永續設計從抽象的美學理念昇華為可量化、可驗證的嚴謹減碳科學。將 One Click LCA 的全生命週期認證能力與 EC3 在供應鏈採購端的高顆粒度精密對接，建築師得以在每一平方米的建築營造中落實真實可信的氣候領導力。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
