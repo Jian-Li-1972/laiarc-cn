@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>線上被動房策劃：將 PHPP 遷移至雲端工作流程 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          線上被動房策劃：將 PHPP 遷移至雲端工作流程
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          designPH 3D 遮陽校核、氣密性驗證（n50）、無熱橋構造優化與雲端一體化 PHPP 能耗平衡
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 被動房標準（Passivhaus）的嚴謹物理學體系
+        </h2>
+        <p>
+          被動房標準（由德國被動房研究所 PHI 確立）至今仍是全球建築節能領域最嚴苛、最精準的品質保障認證體系。通過該認證必須嚴格滿足量化物理邊界：年採暖熱需求 $\le 15\text{ kWh/m}^2/\text{年}$，總一次能源可再生需求（PER）$\le 60\text{ kWh/m}^2/\text{年}$，以及在 50 Pa 壓差下氣密性指標達到 $n_{50} \le 0.6\text{ 次/小時}$（ACH）。
+        </p>
+        <p>
+          在傳統工作流中，工程師幾乎完全依賴基於電子表格的<strong>被動房策劃軟體包（PHPP）</strong>。如今，藉助 <strong>designPH</strong> 三維視覺化建模環境與雲端直連的 BIM 外掛，繁瑣的手動表格輸入被徹底消除，實現了動態立體遮陽因數計算與圍護結構表面積的自動化精準提取。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">被動房物理熱平衡核心方程式：</strong><br>
+          • <strong>採暖需求（<em>Q<sub>h</sub></em>）：</strong> [ 圍護傳熱損失 (<em>Q<sub>T</sub></em>) + 通風熱損失 (<em>Q<sub>V</sub></em>) ] − <em>η</em> · [ 太陽輻射得熱 (<em>Q<sub>s</sub></em>) + 室內人體與設備得熱 (<em>Q<sub>i</sub></em>) ] $\le 15\text{ kWh/m}^2\text{a}$<br>
+          • <strong>無熱橋構造細部準則：</strong> 建築外護結構所有交接節點的線傳熱係數均嚴格保持在 $\Psi \le 0.01\text{ W/(m}\cdot\text{K)}$。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 現代工具鏈：從 designPH 到雲端跨學科協同
+        </h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">工作流階段</th>
+              <th style="padding: 10px 14px; text-align: left;">核心工具與軟體</th>
+              <th style="padding: 10px 14px; text-align: left;">關鍵工程交付成果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">1. 三維幾何遮陽與表面積算量</td>
+              <td style="padding: 10px 14px; color: #4caf50;">designPH（SketchUp / Rhino 外掛）</td>
+              <td style="padding: 10px 14px;">自動外護結構表面屬性分類、三維地平線建築物遮陽折減係數（$F_s$）。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">2. 二維熱橋數值模擬分析</td>
+              <td style="padding: 10px 14px; color: #4caf50;">THERM / flixo（有限元熱傳導模擬）</td>
+              <td style="padding: 10px 14px;">計算地基基礎、門窗洞口收邊及女兒牆節點的線傳熱係數（$\Psi$ 值）。</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">3. 綜合能耗與熱平衡計算</td>
+              <td style="padding: 10px 14px; color: #4caf50;">PHPP 10+ / BIM2PH / 雲端 BEM</td>
+              <td style="padding: 10px 14px;">逐月採暖熱平衡表、新風熱回收機組（HRV $\ge 75\%$）選型及 PER 一次能源計算。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 被動房圍護結構技術規格的五大支柱
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; font-size: 15px; margin: 0 0 8px 0;">1. 超高效保溫與體形係數控制</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0;">連續無中斷外保溫層，傳熱係數 $U \le 0.15\text{ W/(m}^2\text{K)}$，緊湊的建築體形係數（$A/V \le 0.35$）。</p>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; font-size: 15px; margin: 0 0 8px 0;">2. 被動房權威認證門窗</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0;">三玻兩腔 Low-E 充氬氣玻璃單元、複合暖邊間隔條與超保溫窗框（$U_w \le 0.80\text{ W/(m}^2\text{K)}$，$g \approx 0.50$）。</p>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; font-size: 15px; margin: 0 0 8px 0;">3. 高效熱回收新風系統（HRV/ERV）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0;">持續平衡式新風換氣，顯熱回收效率 $\eta_{HRV} \ge 75\%$，超低風機特定功率（$SFP \le 0.45\text{ Wh/m}^3$）。</p>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #e91e63; font-size: 15px; margin: 0 0 8px 0;">4. 連續無間斷氣密層</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0;">採用完整氣密膜與專用密封膠帶系統（如 pro clima / SIGA），經鼓風門氣密性測試驗證（$n_{50} \le 0.6\text{ ACH}$）。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳總結 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 被動房標準透過將熱物理學與嚴格的圍護構造細部相結合，消除了低碳設計中的任何主觀猜測。隨著三維 designPH 與雲端 BIM 模型的深度融合，超低能耗建築的建模與校核變得更加高效，協同更加順暢，並能真正兌現節能目標。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
