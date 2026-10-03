@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>低碳混凝土與地聚合物膠凝材料：配合比設計與 SCM 指南 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          低碳混凝土與地聚合物膠凝材料：配合比工程設計與 SCM 供應鏈指南
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          礦物摻合料（SCM）、石灰石煅燒黏土水泥（LC3）、無熟料地聚合物、CO2 礦化技術與工程採購標準
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 顛覆全球消耗量最大建材的脫碳路徑
+        </h2>
+        <p>
+          傳統普通矽酸鹽水泥（OPC）生產佔據了全球人為碳排放總量的約 <strong>8%</strong>，其主要源自石灰石高溫煅燒分解反應（$CaCO_3 \rightarrow CaO + CO_2$）以及回轉窯內高達 <strong>1450°C</strong> 的極端化石能源燃燒熱。
+        </p>
+        <p>
+          現代低碳混凝土材料工程透過全面引進活性礦物摻合料（SCM）、石灰石煅燒黏土水泥（LC3）以及零熟料鹼激發地聚合物膠凝材料，在完全保障結構設計抗壓強度（$f'_c \ge 35\text{–}60\text{ MPa}$）的前提下，能夠削減高達 <strong>70% 的前端隱含碳排放</strong>。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">低碳配合比熱物理與碳足跡計算模型：</strong><br>
+          • <strong>SCM 替代率加權碳強度：</strong> $GWP_{mix} = w_{OPC}\cdot GWP_{OPC} + w_{GGBS}\cdot GWP_{GGBS} + w_{FA}\cdot GWP_{FA}$ —— 目標控制 GWP $\le 160\text{ kg CO}_2\text{e/m}^3$（對標常規基準 $380\text{ kg CO}_2\text{e/m}^3$）。<br>
+          • <strong>CO₂ 注入礦化技術（CarbonCure 體系）：</strong> 在攪拌過程中精確注入液態 CO₂，使其與水泥初凝游離鈣離子快速反應生成納米級 $CaCO_3$ 晶體，在提升早期抗壓強度 10% 的同時實現永久固碳。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 高性能低碳混凝土配合比核心類型
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">1. 高摻量礦渣 / 粉煤灰體系（HV-SCM）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              使用粒化高爐礦渣微粉（GGBS）替代 50%–70% 普通水泥。提供極佳的抗氯離子滲透與耐硫酸鹽腐蝕性能，是沿海建築深基礎與地下工程的黃金配合比。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">減碳效益：降低 45%–60% GWP 碳排放強度</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">2. 石灰石煅燒黏土水泥（LC3 體系）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              採用 50% 水泥熟料、30% 煅燒黏土（偏高嶺土）、15% 石灰石細粉與 5% 石膏混磨複合。黏土煅燒溫度僅需 800°C，為缺乏工業礦渣鋼廠的地區提供低碳方案。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">減碳效益：降低 35%–40% GWP 碳排放強度</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">3. 鹼激發地聚合物混凝土（Zero-OPC 體系）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              100% 完全摒棄矽酸鹽水泥熟料，以矽酸鈉/氫氧化鈉強鹼溶液激發工業火山灰質固廢。具備超強的化學耐腐蝕性能與超高溫抗火性能（> 1000°C）。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">減碳效益：降低 70%–80% GWP 碳排放強度</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>工程技術指引：</strong> 在招標工程量清單與技術規格書中指定低碳混凝土，要求從傳統規定水灰比模式轉變為「性能驗證型指標」（在 CSI MasterFormat 第 03 30 00 節中明確以 56 天後期強生長曲線替代傳統 28 天齡期，並設置 GWP 碳排放上限值）。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
