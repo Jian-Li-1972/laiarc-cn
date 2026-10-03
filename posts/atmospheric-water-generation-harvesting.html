@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乾旱人居大氣製水（AWG）與閉環雨水收集系統工程 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          乾旱人居環境大氣製水與閉環雨水收集系統工程
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          太陽能驅動大氣製水（AWG）熱力學、多級超濾（UF/RO）、灰水人工濕地與液體零排放硬體
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 缺水生態系統中的水資源自主性
+        </h2>
+        <p>
+          在荒漠、高山或孤島等極端環境中，市政供水基礎設施完全缺位，且地下水開採會造成生態破壞或面臨水質苦鹹鹽鹼化問題。具備抗逆韌性的建築必須實現<strong>淨零耗水（Net-Zero Water）完全自給</strong>。
+        </p>
+        <p>
+          實現全面的水資源自主需要同步協同的閉環架構：透過<strong>高效屋頂匯水系統</strong>收集突發性降雨，藉由<strong>太陽能大氣製水機（AWG）</strong>萃取環境大氣濕氣，並將產生的 100% 灰水透過<strong>潛流生物人工濕地</strong>進行循環再利用，滿足非飲用用水需求。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">熱力學與水資源收集計算公式：</strong><br>
+          • <strong>年雨水收集產量（$Y_{rain}$）：</strong> $Y_{rain} = A_{catchment} \cdot P_{annual} \cdot C_{runoff} \cdot \eta_{filter}$ [公升/年]，其中光滑金屬板/高分子防水膜屋面徑流係數 $C_{runoff} \approx 0.90\text{–}0.95$，初期雨水棄流與過濾折減係數 $\eta_{filter} \approx 0.90$。<br>
+          • <strong>冷凝相變能耗閥值（AWG）：</strong> 冷凝水蒸氣所需的理論最小能量取決於氣化潛熱：$Q_{latent} = \dot{m}_{water} \cdot h_{fg}$（在 $20^\circ\text{C}$ 下，$h_{fg} \approx 2450\text{ kJ/kg}$）。現代固態吸附/壓縮機式 AWG 機組的目標能效指標為 $\le 0.25\text{–}0.35\text{ kWh/公升}$。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 多級淨水處理與物理屏障過濾鏈
+        </h2>
+        <p>
+          來自大氣降雨或冷凝的原生水體，在達到安全飲用標準前，必須依序通過精確的物理截留、高分子膜過濾與紫外線滅菌屏障：
+        </p>
+
+        <!-- 技術參數表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">過濾處理階段</th>
+              <th style="padding: 10px 14px; text-align: left;">孔徑精度 / 物理機制</th>
+              <th style="padding: 10px 14px; text-align: left;">目標去除污染物</th>
+              <th style="padding: 10px 14px; text-align: left;">硬體配置與維護標準</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">1. 旋流初期雨水棄流裝置</td>
+              <td style="padding: 10px 14px;">流體動力離心沉澱分離</td>
+              <td style="padding: 10px 14px;">大顆粒泥沙、鳥類糞便、樹葉枯枝（$> 200\ \mu\text{m}$）</td>
+              <td style="padding: 10px 14px; color: #4caf50;">自動排棄初期 1–2 mm 降雨量；自動復位排污閥</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">2. 多介質前置微濾 + 活性炭</td>
+              <td style="padding: 10px 14px;">$5\ \mu\text{m}$ 熔噴聚丙烯 + 顆粒活性炭（GAC）</td>
+              <td style="padding: 10px 14px;">懸浮物固體、餘氯、揮發性有機物（VOCs）、異味異色</td>
+              <td style="padding: 10px 14px; color: #4caf50;">壓差表自動監控觸發；每 6 個月定期更換濾芯</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">3. 中空纖維超濾膜（UF）</td>
+              <td style="padding: 10px 14px;">$0.01\ \mu\text{m}$ PVDF 耐污染多孔微孔膜</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">99.9999% 細菌、賈第鞭毛蟲等原蟲包囊、濁度微粒</td>
+              <td style="padding: 10px 14px;">自動化正沖洗/反沖洗循環，低功耗運行</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">4. 紫外線消殺與礦化調節</td>
+              <td style="padding: 10px 14px;">$254\text{ nm}$ UV-C 殺菌反應腔 + 天然方解石濾料床</td>
+              <td style="padding: 10px 14px;">病毒病原體滅活與水質酸鹼度礦化調平（pH $7.2\text{–}7.8$）</td>
+              <td style="padding: 10px 14px; color: #d4af37;">NSF/ANSI 55 A 級認證不鏽鋼 UV 反應器</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 閉環微型水文系統架構
+        </h2>
+        <p>
+          離網人居環境採用嚴格的三分區獨立給排水管網，最大化延長水資源的梯級利用壽命，並徹底告別市政基礎管網依賴：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">1. 大氣冷凝與雨水匯聚端</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              太陽能直流驅動的大氣製水機每日自空氣中冷凝獲取 30–100 公升純淨水，平抑旱季供水波動。屋頂匯水天溝則將暴雨導入地下避光遮陽的 HDPE 水窖。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">主要用途：優質安全生活飲用水水源</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">2. 灰水生態滯留人工濕地</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              沐浴、洗手盆及洗衣排水直接匯入水平潛流人工濕地。蘆葦（*Phragmites australis*）根系共生微生物群與火山岩濾料床在好氧環境下徹底分解表面活性劑與硝酸鹽。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">次級循環：馬桶沖洗、景觀滴灌用水</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">3. 厭氧黑水生物反應器</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              排泄黑水進入多隔室厭氧折流板反應器（ABR）配合蚯蚓生物濾池，在無任何化學藥劑添加的前提下，將有機固體分解轉化為無病原體的天然礦物腐殖質。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">最終目標：達到環境液體零排放（ZLD）</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 工程規範標準與管線硬體選型
+        </h2>
+
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>硬體選型與工程設計規範指南</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">CSI MasterFormat 分類編碼 22 13 00 / 22 47 00</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>生活飲用水管材：</strong> 採用高密度交聯聚乙烯（PEX-a）管或 316L 食品級不鏽鋼管道；徹底避免低礦化度軟水對傳統銅管產生的點蝕與析出風險。</li>
+            <li><strong>儲水箱衛生標準：</strong> 食品級遮光滾塑聚乙烯水箱，內壁光滑自潔。水箱底部配置微型潛水曝氣循環泵，防止死水停滯與厭氧生物膜生長。</li>
+            <li><strong>智慧變頻增壓泵：</strong> 直流變頻恆壓增壓泵（如 Grundfos SCALA2 / Flojet 24V 泵），在運行功率 $< 150\text{ 瓦}$ 的低功耗條件下穩定輸出 3.0 bar 管網工作壓力。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 真正的離網永續性，要求將水資源視為永不停歇的循環生物媒介，而非單次消耗的公共設施。透過串聯大氣製水技術、精確的多級屏障過濾與植物根際生態修復，現代建築得以完全脫離市政水網束縛，在嚴酷乾旱環境中孕育生機勃勃的獨立綠洲。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
