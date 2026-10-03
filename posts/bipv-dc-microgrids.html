@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>光伏建築一體化（BIPV）與直流微電網：光伏立面與分散式儲能整合指南 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          光伏建築一體化（BIPV）與直流微電網：光伏立面與分散式儲能整合指南
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          光伏建築一體化技術、48V/380V 原生直流拓撲、多路 MPPT 控制器與離網儲能系統容量定型
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 建築活性表皮的工程範式
+        </h2>
+        <p>
+          傳統的屋頂光伏（PV）支架系統在複雜的建築幾何形態上往往存在美學衝突與結構荷載限制。<strong>光伏建築一體化（BIPV）</strong>以具備發電功能的建材單元替代傳統幕牆掛板、層間不透明玻璃、採光天窗及陽台欄板，兼具雙重使命：結構耐候防護與全天候能源捕獲。
+        </p>
+        <p>
+          當與<strong>原生直流微電網（Native DC Microgrids）</strong>協同運作時，BIPV 徹底規避了傳統電網架構中頻繁的 $DC \rightarrow AC \rightarrow DC$ 多級逆變損耗，消除了 <strong>12% 至 22% 的雙向傳輸能耗損失</strong>，直接為原生直流變頻熱泵、LED 驅動照明矩陣及分散式電池儲能系統（BESS）提供純淨電能。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">核心發電量與儲能定型公式：</strong><br>
+          • <strong>日均光伏發電量（$E_{gen}$）：</strong> $E_{gen} = A_{pv} \cdot \eta_{module} \cdot H_{tilt} \cdot PR$ [kWh/天]，其中系統綜合效率比 $PR$（取值約 $0.75\text{–}0.85$）涵蓋陰影遮擋、入射角餘弦損失及溫度熱衰減折減。<br>
+          • <strong>儲能電池可用容量（$C_{ESS}$）：</strong> $C_{ESS} = \frac{E_{load} \cdot N_{autonomy}}{DoD \cdot \eta_{conv}}$ [kWh]，其中 $DoD$ 為放電深度（磷酸鐵鋰 $LiFePO_4$ 通常取 80%–90%），$N_{autonomy}$ 為無光照目標儲備自給天數（通常設定為 2–3 天）。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. BIPV 電池技術與建築立面構造整合
+        </h2>
+        <p>
+          選取最適宜的光伏電池材料體系，決定了建築立面在峰值發電功率密度、弱光散射吸收率與光學通透度之間的最佳權衡：
+        </p>
+
+        <!-- 技術參數表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">BIPV 技術類別</th>
+              <th style="padding: 10px 14px; text-align: left;">轉換效率與溫度係數</th>
+              <th style="padding: 10px 14px; text-align: left;">光學透光度（VLT）</th>
+              <th style="padding: 10px 14px; text-align: left;">最佳建築應用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">碲化鎘（CdTe）薄膜光伏</td>
+              <td style="padding: 10px 14px;">14%–17% | $-0.21\%/^\circ\text{C}$（出色的弱光響應與耐熱衰減性）</td>
+              <td style="padding: 10px 14px; color: #4caf50;">10%–40% 可訂製透光率</td>
+              <td style="padding: 10px 14px;">玻璃幕牆視線透光區、雙層呼吸式幕牆、採光頂棚</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">異質結（HJT）單晶矽</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">21%–23% | $-0.26\%/^\circ\text{C}$（超高光電轉換效率）</td>
+              <td style="padding: 10px 14px;">不透明 / 雙面受光</td>
+              <td style="padding: 10px 14px;">層間不透明幕牆飾面、通風雨幕實牆外板、光伏屋面瓦</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">鈣鈦礦-矽疊層（前沿技術）</td>
+              <td style="padding: 10px 14px; color: #d4af37; font-weight: bold;">理論極限潛力達 26%–30%+</td>
+              <td style="padding: 10px 14px;">波長可調 / 半透明</td>
+              <td style="padding: 10px 14px;">下一代高密度城市超低能耗建築綜合表皮</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 硬體電氣架構：48V/380V 直流母線拓撲
+        </h2>
+        <p>
+          在離網抗逆生態人居中，電氣基礎設施劃分為終端家用電器低壓直流母線與大型動力暖通設備高壓直流骨幹網絡：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">1. 發電端：多通道獨立 MPPT 控制器</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              立面垂直安裝極易受到建築陰影與轉角自遮擋影響。獨立多通道最大功率點追蹤（MPPT）組串控制器針對不同立面朝向單獨調控，杜絕組串間電壓失配損耗。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">性能指標：99.2% MPPT 動態追蹤精度</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">2. 儲能端：磷酸鐵鋰（LiFePO4）儲能系統</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              磷酸鐵鋰（$LiFePO_4$）體系具備高熱穩定性（熱失控臨界溫度 $> 270^\circ\text{C}$），在 80% DoD 下具備 6000+ 次循環壽命。整合 CAN 總線智慧 BMS 與樓宇自控系統實現閉環握手。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">安全標準：通過 UL 9540A 級熱失控蔓延防火認證</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">3. 配電端：原生 48V / 380V 直流微電網</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              直接為直流變頻多聯機熱泵（VRF）、低壓 PoE 智慧照明系統、新風通風機及電動載具充電樁供電，實現全鏈條無逆變轉換運行。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">系統效益：系統綜合用電能效提升 15% 以上</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 工程規範標準與硬體選型採購
+        </h2>
+
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>硬體選型與工程設計規範指南</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">CSI MasterFormat 分類編碼 48 14 00</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>BIPV 模組標準認證：</strong> 電氣安全性能必須獲得 IEC 61215 / IEC 61730 雙重認證，建築結構性能同時符合 EN 12600 / ASTM C1048 建築夾膠防爆安全玻璃衝擊等級。</li>
+            <li><strong>背板通風冷卻構造：</strong> BIPV 立面背部必須預留不小於 <strong>50 mm 的連續垂直通風空氣層</strong>。利用熱壓煙囪效應為光伏組件持續降溫，避免高溫熱衰減（組件工作溫度每下降 $1^\circ\text{C}$，發電效率即可恢復約 $0.25\%$）。</li>
+            <li><strong>逆變儲能硬體選型：</strong> 選用混合雙向直流耦合逆變充電設備（如 Victron Energy / 施耐德 Schneider Electric Conext 系列），並標配固態直流電弧故障斷路器（AFCI）。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 將建築表皮、可再生能源捕獲與固態直流儲能深度融合，推動了建築從單向「能源消耗者」向主動「分散式發電站」的根本轉變。藉由 BIPV 與原生直流微電網的協同架構，偏遠離網人居得以達成無妥協的能源抗逆力與淨正能生態自給。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
