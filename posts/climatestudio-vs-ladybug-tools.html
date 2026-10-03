@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClimateStudio 對比 Ladybug Tools：前期採光與熱舒適工作流評測 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          ClimateStudio 對比 Ladybug Tools：前期採光與熱舒適工作流深度評測
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          Radiance 核心、GPU 路徑追蹤、空間採光自主度（sDA）、通用熱氣候指數（UTCI）微氣候與 Rhino 效能自動化
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 物理模擬引擎與計算架構
+        </h2>
+        <p>
+          在前期氣候響應式建築體量推敲中，環境模擬軟體必須在數值計算精度與方案迭代速度之間取得精確平衡。在 <strong>Rhinoceros 3D / Grasshopper</strong> 平臺中，建築師主要依托兩大計算生態：
+        </p>
+        <p>
+          <strong>ClimateStudio</strong>（由 Solemma 開發）採用基於權威驗證 RADIANCE 演算法構建的獨家漸進式 GPU 光線追蹤引擎，提供即時渲染反饋與極速全年動態採光計算。相較之下，<strong>Ladybug Tools</strong>（Ladybug、Honeybee、Butterfly、Dragonfly）則是業界頂級的開源 Python 計算架構，充當 Grasshopper 與 EnergyPlus、Radiance、OpenStudio 及 OpenFOAM 之間的無縫接口。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">核心環境物理模擬計算模型：</strong><br>
+          • <strong>空間採光自主度（<em>sDA<sub>300/50%</sub></em>）：</strong> 工作面樓板面積中，在全年使用時間內有 ≥ 50% 的時段達到 ≥ 300 Lux 天然採光照度的區域百分比。<br>
+          • <strong>年陽光照射量（<em>ASE<sub>1000,250h</sub></em>）：</strong> 工作面面積中，在全年使用時間內直射太陽光超過 1,000 Lux 且累積時數 &gt; 250 小時的區域百分比（眩光與過熱風險指標）。<br>
+          • <strong>通用熱氣候指數（<em>UTCI</em>）：</strong> <em>f(T<sub>air</sub>, T<sub>mrt</sub>, v<sub>wind</sub>, RH)</em> —— 綜合空氣溫度、平均輻射溫度、風速與相對濕度，模擬室外公共微氣候空間中的人體熱應力。
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 功能維度與技術規格橫向評測
+        </h2>
+        <p>
+          在 ClimateStudio 與 Ladybug Tools 之間進行選型，關鍵在於設計團隊更看重開箱即用的圖形化合規報表，還是高度靈活的參數化演算法控制：
+        </p>
+
+        <!-- 評測表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">功能特性 / 性能指標</th>
+              <th style="padding: 10px 14px; text-align: left;">ClimateStudio (Solemma)</th>
+              <th style="padding: 10px 14px; text-align: left;">Ladybug Tools (Honeybee/Dragonfly)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">底層模擬核心</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">GPU 加速 Radiance 與 EnergyPlus</td>
+              <td style="padding: 10px 14px;">EnergyPlus、Radiance、Daysim、OpenFOAM (CPU)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">全年動態採光計算速度</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">依託 CUDA/OptiX 路徑追蹤，提速 10 到 50 倍</td>
+              <td style="padding: 10px 14px;">中等（依賴多線程 CPU 運算）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">使用者介面與交互工作流</td>
+              <td style="padding: 10px 14px;">內嵌 Rhino 原生視窗面板 + Grasshopper 節點</td>
+              <td style="padding: 10px 14px; color: #d4af37;">純 Grasshopper 節點畫布與 Pollination SaaS</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">標準合規報告（LEED / BREEAM / WELL）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">一鍵自動生成 LEED v4.1 / EN 17037 PDF 認證報告</td>
+              <td style="padding: 10px 14px;">需要自行搭建自訂 Grasshopper 數據處理配方</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">參數化尋優與生形探索</td>
+              <td style="padding: 10px 14px;">提供專用 Grasshopper 組件用於單純優化</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">具備極致的自由度（Octopus / Galapagos 多目標演化）</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 前期微氣候與眩光綜合計算工作流
+        </h2>
+        <p>
+          優化後的運算化工作流程在方案草圖階段將日照可達性、室內採光分佈與微氣候舒適度嚴謹串聯：
+        </p>
+
+        <!-- 卡片組 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">第一階段：太陽輻射照度與立面開窗推敲</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              利用 ClimateStudio / Ladybug 分析建築表皮全年累積輻射量。識別高得熱立面區域，精確計算參數化遮陽百葉尺寸並控制窗牆比（WWR ≤ 40%）。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">產出：立面得熱熱力分佈圖與動態遮陽幾何</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">第二階段：室內 sDA / ASE 與採光眩光機率（DGP）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              執行特定視點的眩光機率（DGP）渲染與全年 sDA 模擬。將天然漫射光引入大進深平面核心區，同時徹底消除直射眩光造成的不適感。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">指標目標：sDA ≥ 75% 且 ASE &lt; 10%</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #00bcd4; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #00bcd4; margin: 0 0 8px 0; font-size: 16px;">第三階段：室外微氣候熱舒適度（UTCI）評估</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              結合在地 EPW 氣象數據、地表平均輻射溫度（$T_{mrt}$）與風環境向量，為公共廣場、庭院及屋頂露臺生成季節性 UTCI 人體熱舒適矩陣。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">舒適區間：UTCI 穩定控制在 9°C 至 26°C 之間</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 決策矩陣：選擇最適配的 SaaS 運算工具棧
+        </h2>
+
+        <!-- 平臺 1 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>1. ClimateStudio (Solemma)</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">商用交鑰匙方案 / 高節奏方案設計團隊</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>最佳適用對象：</strong> 快節奏商業建築設計團隊、LEED/WELL 綠建認證專家，以及無需編寫代碼即可獲得即刻視覺化反饋的設計工作室。</li>
+            <li><strong>硬體要求：</strong> 配備具備獨立 RT 核心的 NVIDIA RTX 系列專業顯示卡，以啟動硬體加速光追。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>部署建議：</strong> 為專案負責人與永續協調員配置專用授權，自動輸出供管理層與認證機構審核的高規格合規報表。
+          </div>
+        </div>
+
+        <!-- 平臺 2 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>2. Ladybug Tools + Pollination 雲端平台</span>
+            <span style="font-size: 13px; color: #4caf50; background: #1b261b; padding: 3px 8px; border-radius: 4px;">計算性實驗室 / 參數化形態生形推演</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>最佳適用對象：</strong> 運算化設計研究團隊、幕牆工程深化專家，以及需要運行多目標遺傳進化演算法（Galapagos / Wallacei）的先鋒建築師。</li>
+            <li><strong>雲端擴展：</strong> Pollination.cloud 支援在瀏覽器中進行模型幾何校核，並為超大規模城市規劃體量提供分散式雲端算力支撐。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>部署建議：</strong> 基於開源 Ladybug 進行客製化腳本研發，搭配 Pollination SaaS 解決 Revit 到 Rhino 的幾何轉譯與雲端並行運算瓶頸。
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳總結 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 高性能綠色建築要求環境物理模擬扮演主動生成形體的核心驅動力，而非事後的合理化背書。無論是藉助 ClimateStudio 的 GPU 光線追蹤，還是依托 Ladybug 的參數化計算節點圖，在前期深度整合採光與熱工指標，能確保建築與其所在的微氣候環境達成高度的工程協同。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
