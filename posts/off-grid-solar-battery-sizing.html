@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微型人居離網太陽能與電池儲能容量定型指南 | LAIARC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0a0b0e;
+      color: #d6d6d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    header.site-header {
+      background: #000000;
+      padding: 18px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2430;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+    .post-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .back-btn {
+      display: inline-block;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+    footer.site-footer {
+      border-top: 1px solid #1c202a;
+      padding: 30px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    footer.site-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">LAIARC</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
+      <a href="mailto:contact@laiarc.com">聯絡合作</a>
+    </nav>
+  </header>
+
+  <main class="post-wrapper">
+    <a href="../index.html" class="back-btn">← 返回首頁</a>
+
+    <!-- 原文結構 1:1 中文轉譯區塊 -->
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #d6d6d6; line-height: 1.75; padding: 16px 8px; max-width: 100%; box-sizing: border-box;">
+
+      <!-- 文章頂部標題區 -->
+      <header style="margin-bottom: 28px; border-bottom: 1px solid #333; padding-bottom: 20px;">
+        <h1 style="color: #ffffff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px;">
+          微型人居離網太陽能與電池儲能容量定型指南
+        </h1>
+        <p style="color: #d4af37; font-size: 16px; font-weight: 500; margin: 0 0 12px 0;">
+          負載審計、48V 磷酸鐵鋰電池特性、MPPT 太陽能計算、混合逆變器與遠端硬體採購
+        </p>
+        <div style="font-size: 13px; color: #888;">
+          發布機構：<span style="color: #aaa; font-weight: 600;">LAIARC 綠色人居與運算性設計實驗室</span>
+        </div>
+      </header>
+
+      <!-- 第一節 -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          1. 微型空間的能源審計與峰值負載特徵分析
+        </h2>
+        <p>
+          為高性能微型木屋或偏遠工作室設計離網電氣架構，絕非始於光伏板的數量堆疊，而是始於嚴謹的**每日瓦時（Wh）用電負載審計**。容量配置過小將導致電池長期虧電受損與逆變器頻繁跳閘；而盲目超配則會徒增屋頂結構荷載與不必要的資本支出。
+        </p>
+        <p>
+          用電負載必須嚴格劃分為連續基礎負載（新風換氣 ERV、高效直流冷藏、Wi-Fi 邊緣路由設備）與間歇性高耗能峰值負載（電磁爐烹飪、變頻分體熱泵空調、深井加壓水泵）。
+        </p>
+
+        <div style="background: #181818; border-left: 3px solid #4caf50; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px; line-height: 1.8;">
+          <strong style="color: #4caf50;">核心電氣容量計算公式：</strong><br>
+          • <strong>每日總用電需求（<em>E<sub>daily</sub></em>）：</strong> ∑ [ 額定功率 (<em>P<sub>i</sub> [W]</em>) × 運行小時數 (<em>t<sub>i</sub> [h]</em>) ] × 1.25（系統綜合損耗補償係數）<br>
+          • <strong>所需光伏組件峰值功率（<em>P<sub>pv</sub></em>）：</strong> <em>E<sub>daily</sub></em> / [ 峰值日照時數 (<em>PSH [h/day]</em>) × 系統綜合折減係數 (<em>η<sub>derate</sub> ≈ 0.78</em>) ]<br>
+          • <strong>可用儲能電池容量（<em>C<sub>batt</sub></em>）：</strong> (<em>E<sub>daily</sub></em> × 自主續航天數 [通常取 2.0–3.0 天]) / 放電深度 (<em>DoD [磷酸鐵鋰取 0.80–0.90]</em>)
+        </div>
+      </section>
+
+      <!-- 第二節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          2. 儲能化學體系與母線電壓架構基準
+        </h2>
+        <p>
+          在 12V 或 24V 低壓下運行會產生過大的電流負荷，需要配備粗重昂貴的銅質線纜（如 4/0 AWG 粗纜）並伴隨顯著的線路壓降。現代離網建築標準強制採用 **48V 直流母線架構**並搭配磷酸鐵鋰（LiFePO4）化學電芯：
+        </p>
+
+        <!-- 技術參數對比表格 -->
+        <table style="width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: #181818; border-radius: 6px; overflow: hidden;">
+          <thead>
+            <tr style="background: #242424; color: #d4af37; border-bottom: 2px solid #333;">
+              <th style="padding: 10px 14px; text-align: left;">系統參數指標</th>
+              <th style="padding: 10px 14px; text-align: left;">12V / 24V 傳統鉛酸電池體系</th>
+              <th style="padding: 10px 14px; text-align: left;">48V 機架式磷酸鐵鋰（LiFePO4）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">可用放電深度 (DoD)</td>
+              <td style="padding: 10px 14px; color: #f44336;">最大 50%（超過將發生永久性極板硫化衰減）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">80% – 90% 持續深放電（無記憶效應）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">循環壽命 (80% DoD 基準)</td>
+              <td style="padding: 10px 14px;">500 – 1,200 次循環（使用壽命 3–5 年）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">4,000 – 6,000+ 次循環（使用壽命 12–15+ 年）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">3000W 負載時的母線電流</td>
+              <td style="padding: 10px 14px; color: #f44336;">250 A（需極粗的 4/0 AWG 規格銅纜）</td>
+              <td style="padding: 10px 14px; color: #4caf50; font-weight: bold;">62.5 A（4 AWG 標準線纜即可安全運行）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #292929;">
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">充電能效與熱電壓降</td>
+              <td style="padding: 10px 14px;">75% – 85% 雙向循環效率</td>
+              <td style="padding: 10px 14px; color: #d4af37; font-weight: bold;">95% – 98% 超高速充電接受率</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: bold; color: #fff;">能量密度與空間佔用</td>
+              <td style="padding: 10px 14px;">30–40 Wh/kg（極其笨重，對樓板荷載要求高）</td>
+              <td style="padding: 10px 14px; color: #4caf50;">100–140 Wh/kg（緊湊型 19 英吋標準機架安裝）</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 第三節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          3. 系統拓撲結構：混合逆變器、MPPT 追蹤與直流微電網
+        </h2>
+        <p>
+          優化後的離網配電設計藉由建立雙重電力傳輸網絡，大幅減少多次電能轉換帶來的損耗：
+        </p>
+
+        <!-- 架構細分卡片 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #d4af37; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #d4af37; margin: 0 0 8px 0; font-size: 16px;">1. 專屬直流微電網（48V 降壓至 12V/24V）</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              將全天不間斷運行的基礎負載（LED 建築照明燈帶、通風風機、星鏈/路由器、低壓水泵）直接從 48V 直流母線經 DC-DC 降壓模組供電，完全規避逆變器自身的持續空載皮重功耗（25–50W 待機損耗）。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">核心優勢：無逆變器待機耗電，100% 持續供電</span>
+          </div>
+
+          <div style="background: #181818; border: 1px solid #2e2e2e; border-top: 3px solid #4caf50; border-radius: 6px; padding: 16px;">
+            <h4 style="color: #4caf50; margin: 0 0 8px 0; font-size: 16px;">2. 一體化純正弦波逆變充電主機</h4>
+            <p style="font-size: 13px; color: #ccc; margin: 0 0 10px 0;">
+              部署整合高壓 MPPT 太陽能控制器（開路電壓 150V–500V Voc）、純正弦波交流輸出（120V/240V 分相）與發電機自動啟停（AGS）乾接點的一體化混合逆變主機。
+            </p>
+            <span style="font-size: 12px; color: #888; background: #222; padding: 3px 6px; border-radius: 3px;">核心優勢：為感性馬達與敏感精密電器提供純淨電力</span>
+          </div>
+        </div>
+
+        <div style="background: #181818; border-left: 3px solid #d4af37; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; font-size: 14px;">
+          <strong style="color: #d4af37;">熱保護與低溫充電截斷：</strong> 磷酸鐵鋰電芯若在低於 0°C（32°F）的環境下強行充電，內部將產生不可逆的鋰枝晶沉積（Lithium Plating），造成容量永久損壞與短路風險。務必選用內部整合電加熱模組的電池，或配置支援低溫充電自動斷電保護的智慧型 BMS。
+        </div>
+      </section>
+
+      <!-- 第四節 -->
+      <section style="margin-bottom: 36px;">
+        <h2 style="color: #d4af37; font-size: 22px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; margin-bottom: 16px;">
+          4. 核心硬體選型採購目錄
+        </h2>
+
+        <!-- 供應商 1 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>1. 商業級船舶與模組化儲能生態系統</span>
+            <span style="font-size: 13px; color: #d4af37; background: #262213; padding: 3px 8px; border-radius: 4px;">Victron Energy / EcoFlow 正浩 Power Kits</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>混合逆變系統：</strong> Victron MultiPlus-II 48V/3000VA/35-50 及 Quattro 雙輸入逆變充電系統。</li>
+            <li><strong>太陽能控制器：</strong> Victron SmartSolar MPPT 150/35 至 250/100 系列，內建藍牙即時監控。</li>
+            <li><strong>高度整合電源中樞：</strong> EcoFlow Power Kits 5kWh–15kWh 即插即用模組化 48V 電力套件。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>採購管道指引：</strong> 經由授權離網能源經銷商獲取全套系統電氣圖紙、VRM 遠端管理平台接入憑據與工程規格書。
+          </div>
+        </div>
+
+        <!-- 供應商 2 -->
+        <div style="background: #181818; border: 1px solid #2c2c2c; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+          <h3 style="color: #ffffff; font-size: 17px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <span>2. 高容量標準伺服器機架儲能與混合逆變器</span>
+            <span style="font-size: 13px; color: #4caf50; background: #1b261b; padding: 3px 8px; border-radius: 4px;">EG4 Electronics / SOK / Signature Solar</span>
+          </h3>
+          <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+            <li><strong>機架式儲能電池：</strong> EG4-LifePower4 / EG4-LL 48V 100Ah (5.12 kWh) 機架式磷酸鐵鋰電池模組，帶 LCD 液晶電量螢幕。</li>
+            <li><strong>一體化逆變主機：</strong> EG4 6000XP / 18kPV 多合一光儲逆變器，整合雙路 MPPT 陣列輸入與交流旁路旁路開關。</li>
+          </ul>
+          <div style="font-size: 13px; color: #aaa; background: #202020; padding: 10px; border-radius: 6px;">
+            <strong>專業供貨通道：</strong> 透過批發級再生能源商城選購具備 UL1973/UL9540 認證的儲能電池包、匯流箱及專用伺服器機櫃。
+          </div>
+        </div>
+      </section>
+
+      <!-- 頁腳結語 -->
+      <footer style="border-top: 1px solid #333; padding-top: 18px; margin-top: 32px; font-size: 13px; color: #888;">
+        <p style="margin: 0 0 8px 0;">
+          <strong>結語：</strong> 真正的建築自主性，依賴於被動式圍護結構保溫效能與主動式再生能源供應系統之間的精準協同。透過採用 48V 磷酸鐵鋰儲能、高壓 MPPT 光伏採集與專屬直流微電網，遠程微型人居得以在零碳排放的前提下，實現終年穩定可靠的能源抗逆力。
+        </p>
+        <p style="margin: 0; font-style: italic;">
+          © LAIARC 綠色人居與運算性設計實驗室。版權所有。
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與交流：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+  </footer>
+
+</body>
+</html>
