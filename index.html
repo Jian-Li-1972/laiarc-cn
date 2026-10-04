@@ -460,7 +460,7 @@
       <div class="player-wrapper">
         <iframe 
           id="biliPlayer" 
-          src="//player.bilibili.com/player.html?bvid=BV1eham6uENK&page=1&high_quality=1&danmaku=0" 
+          src="//player.bilibili.com/player.html?bvid=BV1r6Hr6kEXY&page=1&high_quality=1&danmaku=0" 
           scrolling="no" 
           allowfullscreen="true">
         </iframe>
@@ -468,7 +468,12 @@
 
       <div class="video-selector-label">點擊切換播放影片：</div>
       <div class="playlist-tabs">
-        <button class="tab-btn active" onclick="switchVideo('BV1eham6uENK', this)">泰姬瑪哈陵</button>
+        <!-- 最新發布 2 部影片（預設激活播放第一部） -->
+        <button class="tab-btn active" onclick="switchVideo('BV1r6Hr6kEXY', this)">文明探索 · 最新發布一</button>
+        <button class="tab-btn" onclick="switchVideo('BV1u1Hh6bEXv', this)">文明探索 · 最新發布二</button>
+
+        <!-- 原有 5 部精選影片 -->
+        <button class="tab-btn" onclick="switchVideo('BV1eham6uENK', this)">泰姬瑪哈陵</button>
         <button class="tab-btn" onclick="switchVideo('BV16jam6UE4F', this)">婆羅浮屠：實化迷宮的高維密碼</button>
         <button class="tab-btn" onclick="switchVideo('BV1AGam6pEV9', this)">天空之城：馬丘比丘</button>
         <button class="tab-btn" onclick="switchVideo('BV1BHam6LEf5', this)">哥貝克力石陣（比金字塔早7500年）</button>
