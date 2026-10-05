@@ -47,6 +47,11 @@
       color: #fff;
       text-decoration: none;
     }
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     nav a {
       color: var(--text-sub);
       text-decoration: none;
@@ -56,6 +61,25 @@
     }
     nav a:hover {
       color: #fff;
+    }
+
+    /* Shopify 商城專屬跳轉樣式 */
+    .shop-nav-btn {
+      color: var(--accent-gold) !important;
+      font-weight: 700;
+      border: 1px solid rgba(234, 179, 8, 0.45);
+      padding: 5px 12px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease !important;
+    }
+    .shop-nav-btn:hover {
+      background: var(--accent-gold) !important;
+      color: #000 !important;
+      border-color: var(--accent-gold) !important;
+      box-shadow: 0 0 12px rgba(234, 179, 8, 0.35);
     }
 
     /* 主橫幅 (Banner) */
@@ -115,7 +139,7 @@
       color: var(--text-sub);
     }
 
-    /* 三欄排版，限制寬度防止圖片撐大 */
+    /* 三欄排版 */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -266,10 +290,12 @@
 
   <!-- 頂部導航 -->
   <header>
-    <a href="#" class="logo">LAIARC</a>
+    <a href="https://cn.laiarc.com" class="logo">LAIARC</a>
     <nav>
       <a href="https://cn.laiarc.com">首頁</a>
       <a href="#blog">專欄文章</a>
+      <!-- 官方 Shopify 商城直達入口 -->
+      <a href="https://shop.laiarc.com" target="_blank" rel="noopener noreferrer" class="shop-nav-btn">官方商城 SHOP ↗</a>
       <a href="#contact">聯絡留言</a>
       <a href="https://space.bilibili.com/3707054751484295" target="_blank" rel="noopener noreferrer">B站專區</a>
       <a href="mailto:contact@laiarc.com">聯絡合作</a>
@@ -560,8 +586,9 @@
 
   </main>
 
+  <!-- 頁腳 -->
   <footer>
-    <p>© 2026 LAIARC. 版權所有 | 業務諮詢與合作：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
+    <p>© 2026 LAIARC. 版權所有 | <a href="https://shop.laiarc.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-gold); margin-right: 12px;">LAIARC 官方商城</a> | 業務諮詢與合作：<a href="mailto:contact@laiarc.com">contact@laiarc.com</a></p>
   </footer>
 
   <script>
